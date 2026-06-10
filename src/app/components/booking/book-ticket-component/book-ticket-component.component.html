@@ -1,34 +1,46 @@
-<div class="container">
+<div
+  class="container"
+  *ngIf="event">
 
-    <h2>Book Ticket</h2>
+  <h2>Book Ticket</h2>
 
-    <label>Event</label>
+  <h3>
+    {{ event.title }}
+  </h3>
 
-    <select [(ngModel)]="selectedEvent">
+  <p>
+    Category:
+    {{ event.category }}
+  </p>
 
-        <option>
-            Angular Developer Conference
-        </option>
+  <p>
+    Venue:
+    {{ event.venue.name }}
+  </p>
 
-        <option>
-            Music Night 2026
-        </option>
+  <p>
+    Available Seats:
+    {{ event.availableSeats }}
+  </p>
 
-    </select>
+  <label>
 
-    <br><br>
+    Number of Tickets
 
-    <label>Number of Tickets</label>
+  </label>
 
-    <input
-        type="number"
-        min="1"
-        [(ngModel)]="quantity">
+  <input
+    type="number"
+    min="1"
+    [(ngModel)]="quantity">
 
-    <br><br>
+  <br><br>
 
-    <button (click)="bookTicket()">
-        Book Now
-    </button>
+  <button
+    (click)="bookTicket()">
+
+    Confirm Booking
+
+  </button>
 
 </div>

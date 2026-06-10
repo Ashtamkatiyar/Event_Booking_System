@@ -18,9 +18,9 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
 
   { path: 'events', component: EventListComponentComponent },
-  { path: 'event-detail', component: EventDetailComponentComponent },
+  { path: 'events/:id', component: EventDetailComponentComponent },
 
-  { path: 'book-ticket', component: BookTicketComponent },
+  { path: 'book-ticket/:id', component: BookTicketComponent },
   { path: 'booking-history', component: BookingHistoryComponent },
 
   { path: 'admin-dashboard', component: AdminDashboardComponent }

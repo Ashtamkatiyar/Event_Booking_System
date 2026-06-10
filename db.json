@@ -1,249 +1,310 @@
 {
-   "users": [
-{
-"id": 1,
-"firstName": "Shivam",
-"lastName": "Verma",
-"email": "[shivam.verma@example.com](mailto:shivam.verma@example.com)",
-"password": "admin123",
-"phoneNumber": "9876543210",
-"role": "Admin",
-"createdAt": "2026-06-01T10:00:00Z",
-"preferences": {
-"emailNotifications": true,
-"smsNotifications": true,
-"eventReminders": true,
-"promotionalUpdates": false
-}
-},
-{
-"id": 2,
-"firstName": "Ashtam",
-"lastName": "Katiyar",
-"email": "[ashtam.katiyar@example.com](mailto:ashtam.katiyar@example.com)",
-"password": "user123",
-"phoneNumber": "9876543211",
-"role": "Customer",
-"createdAt": "2026-06-02T10:00:00Z",
-"preferences": {
-"emailNotifications": true,
-"smsNotifications": false,
-"eventReminders": true,
-"promotionalUpdates": true
-}
-},
-{
-"id": 3,
-"firstName": "Isha",
-"lastName": "Choudhary",
-"email": "[isha.choudhary@example.com](mailto:isha.choudhary@example.com)",
-"password": "admin123",
-"phoneNumber": "9876543212",
-"role": "Admin",
-"createdAt": "2026-06-03T10:00:00Z",
-"preferences": {
-"emailNotifications": true,
-"smsNotifications": true,
-"eventReminders": true,
-"promotionalUpdates": true
-}
-},
-{
-"id": 4,
-"firstName": "Shubham",
-"lastName": "Pandey",
-"email": "[shubham.pandey@example.com](mailto:shubham.pandey@example.com)",
-"password": "user123",
-"phoneNumber": "9876543213",
-"role": "Customer",
-"createdAt": "2026-06-04T10:00:00Z",
-"preferences": {
-"emailNotifications": true,
-"smsNotifications": false,
-"eventReminders": true,
-"promotionalUpdates": false
-}
-},
-{
-"id": 5,
-"firstName": "Jatin",
-"lastName": "Singh",
-"email": "[jatin.singh@example.com](mailto:jatin.singh@example.com)",
-"password": "user123",
-"phoneNumber": "9876543214",
-"role": "Customer",
-"createdAt": "2026-06-05T10:00:00Z",
-"preferences": {
-"emailNotifications": true,
-"smsNotifications": true,
-"eventReminders": false,
-"promotionalUpdates": true
-}
-}
-]
-,
-  
-    "events": [
-      {
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Shivam",
+      "lastName": "Verma",
+      "email": "shivam.verma@example.com",
+      "password": "admin123",
+      "phoneNumber": "9876543210",
+      "role": "Admin",
+      "createdAt": "2026-06-01T10:00:00Z",
+      "preferences": {
+        "emailNotifications": true,
+        "smsNotifications": true,
+        "eventReminders": true,
+        "promotionalUpdates": false
+      }
+    },
+    {
+      "id": "2",
+      "firstName": "Ashtam",
+      "lastName": "Katiyar",
+      "email": "ashtam.katiyar@example.com",
+      "password": "user123",
+      "phoneNumber": "9876543211",
+      "role": "Customer",
+      "createdAt": "2026-06-02T10:00:00Z",
+      "preferences": {
+        "emailNotifications": true,
+        "smsNotifications": false,
+        "eventReminders": true,
+        "promotionalUpdates": true
+      }
+    },
+    {
+      "id": "3",
+      "firstName": "Isha",
+      "lastName": "Choudhary",
+      "email": "isha.choudhary@example.com",
+      "password": "admin123",
+      "phoneNumber": "9876543212",
+      "role": "Admin",
+      "createdAt": "2026-06-03T10:00:00Z",
+      "preferences": {
+        "emailNotifications": true,
+        "smsNotifications": true,
+        "eventReminders": true,
+        "promotionalUpdates": true
+      }
+    },
+    {
+      "id": "4",
+      "firstName": "Shubham",
+      "lastName": "Pandey",
+      "email": "shubham.pandey@example.com",
+      "password": "user123",
+      "phoneNumber": "9876543213",
+      "role": "Customer",
+      "createdAt": "2026-06-04T10:00:00Z",
+      "preferences": {
+        "emailNotifications": true,
+        "smsNotifications": false,
+        "eventReminders": true,
+        "promotionalUpdates": false
+      }
+    },
+    {
+      "id": "5",
+      "firstName": "Jatin",
+      "lastName": "Singh",
+      "email": "jatin.singh@example.com",
+      "password": "user123",
+      "phoneNumber": "9876543214",
+      "role": "Customer",
+      "createdAt": "2026-06-05T10:00:00Z",
+      "preferences": {
+        "emailNotifications": true,
+        "smsNotifications": true,
+        "eventReminders": false,
+        "promotionalUpdates": true
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "title": "Angular Developer Conference",
+      "description": "Latest Angular trends and best practices.",
+      "category": "Technology",
+      "venue": {
+        "name": "India Expo Centre",
+        "address": "Knowledge Park II",
+        "city": "Greater Noida",
+        "state": "Uttar Pradesh"
+      },
+      "organizer": {
         "id": 1,
-        "title": "Angular Developer Conference",
-        "description": "Latest Angular trends and best practices.",
-        "category": "Technology",
-        "venue": {
-          "name": "India Expo Centre",
-          "address": "Knowledge Park II",
-          "city": "Greater Noida",
-          "state": "Uttar Pradesh"
-        },
-        "organizer": {
+        "name": "Tech Events India",
+        "email": "contact@techindia.com",
+        "contactNumber": "9876543000"
+      },
+      "schedule": {
+        "startDate": "2026-07-10",
+        "endDate": "2026-07-10",
+        "startTime": "09:00",
+        "endTime": "18:00"
+      },
+      "ticketCategories": [
+        {
           "id": 1,
-          "name": "Tech Events India",
-          "email": "contact@techindia.com",
-          "contactNumber": "9876543000"
+          "name": "Regular",
+          "price": 999,
+          "quota": 200,
+          "remainingTickets": 150
         },
-        "schedule": {
-          "startDate": "2026-07-10",
-          "endDate": "2026-07-10",
-          "startTime": "09:00",
-          "endTime": "18:00"
-        },
-        "ticketCategories": [
-          {
-            "id": 1,
-            "name": "Regular",
-            "price": 999,
-            "quota": 200,
-            "remainingTickets": 150
-          },
-          {
-            "id": 2,
-            "name": "VIP",
-            "price": 2499,
-            "quota": 50,
-            "remainingTickets": 35
-          }
-        ],
-        "totalSeats": 250,
-        "availableSeats": 185,
-        "status": "Upcoming",
-        "createdAt": "2026-06-01T10:00:00Z"
-      },
-      {
-        "id": 2,
-        "title": "Music Night 2026",
-        "description": "Live music concert featuring top artists.",
-        "category": "Music",
-        "venue": {
-          "name": "City Stadium",
-          "address": "Sector 18",
-          "city": "Noida",
-          "state": "Uttar Pradesh"
-        },
-        "organizer": {
+        {
           "id": 2,
-          "name": "Music Mania",
-          "email": "info@musicmania.com",
-          "contactNumber": "9876543111"
-        },
-        "schedule": {
-          "startDate": "2026-08-15",
-          "endDate": "2026-08-15",
-          "startTime": "18:00",
-          "endTime": "23:00"
-        },
-        "ticketCategories": [
-          {
-            "id": 3,
-            "name": "General",
-            "price": 799,
-            "quota": 500,
-            "remainingTickets": 420
-          }
-        ],
-        "totalSeats": 500,
-        "availableSeats": 420,
-        "status": "Upcoming",
-        "createdAt": "2026-06-02T10:00:00Z"
-      }
-    ],
-  
-    "bookings": [
-      {
-        "id": 1,
-        "userId": 2,
-        "eventId": 1,
-        "bookingDate": "2026-06-05T12:00:00Z",
-        "quantity": 2,
-        "totalAmount": 1998,
-        "status": "Confirmed",
-        "tickets": [
-          {
-            "id": 1,
-            "bookingId": 1,
-            "eventId": 1,
-            "ticketCategoryId": 1,
-            "attendeeName": "Rahul Sharma",
-            "seatNumber": "A-101",
-            "status": "Confirmed"
-          },
-          {
-            "id": 2,
-            "bookingId": 1,
-            "eventId": 1,
-            "ticketCategoryId": 1,
-            "attendeeName": "Rahul Sharma",
-            "seatNumber": "A-102",
-            "status": "Confirmed"
-          }
-        ]
-      }
-    ],
-  
-    "notifications": [
-      {
-        "id": 1,
-        "userId": 2,
-        "title": "Booking Confirmed",
-        "message": "Your booking for Angular Developer Conference is confirmed.",
-        "type": "BookingConfirmation",
-        "isRead": false,
-        "createdAt": "2026-06-05T12:01:00Z"
+          "name": "VIP",
+          "price": 2499,
+          "quota": 50,
+          "remainingTickets": 35
+        }
+      ],
+      "totalSeats": 250,
+      "availableSeats": 182,
+      "status": "Upcoming",
+      "createdAt": "2026-06-01T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Music Night 2026",
+      "description": "Live music concert featuring top artists.",
+      "category": "Music",
+      "venue": {
+        "name": "City Stadium",
+        "address": "Sector 18",
+        "city": "Noida",
+        "state": "Uttar Pradesh"
       },
-      {
+      "organizer": {
         "id": 2,
-        "userId": 1,
-        "title": "Low Seat Alert",
-        "message": "VIP tickets are running low.",
-        "type": "AdminAlert",
-        "isRead": false,
-        "createdAt": "2026-06-06T09:00:00Z"
-      }
-    ],
-  
-    "dynamicFormFields": [
-      {
-        "id": 1,
-        "key": "attendeeName",
-        "label": "Attendee Name",
-        "type": "text",
-        "required": true
+        "name": "Music Mania",
+        "email": "info@musicmania.com",
+        "contactNumber": "9876543111"
       },
-      {
-        "id": 2,
-        "key": "age",
-        "label": "Age",
-        "type": "number",
-        "required": true,
-        "min": 18,
-        "max": 100
+      "schedule": {
+        "startDate": "2026-08-15",
+        "endDate": "2026-08-15",
+        "startTime": "18:00",
+        "endTime": "23:00"
       },
-      {
-        "id": 3,
-        "key": "ticketType",
-        "label": "Ticket Type",
-        "type": "select",
-        "required": true,
-        "options": ["Regular", "VIP"]
-      }
-    ]
-  }
+      "ticketCategories": [
+        {
+          "id": 3,
+          "name": "General",
+          "price": 799,
+          "quota": 500,
+          "remainingTickets": 420
+        }
+      ],
+      "totalSeats": 500,
+      "availableSeats": 400,
+      "status": "Upcoming",
+      "createdAt": "2026-06-02T10:00:00Z"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "userId": 2,
+      "eventId": 1,
+      "bookingDate": "2026-06-05T12:00:00Z",
+      "quantity": 2,
+      "totalAmount": 1998,
+      "status": "Cancelled",
+      "tickets": [
+        {
+          "id": 1,
+          "bookingId": 1,
+          "eventId": 1,
+          "ticketCategoryId": 1,
+          "attendeeName": "Rahul Sharma",
+          "seatNumber": "A-101",
+          "status": "Confirmed"
+        },
+        {
+          "id": 2,
+          "bookingId": 1,
+          "eventId": 1,
+          "ticketCategoryId": 1,
+          "attendeeName": "Rahul Sharma",
+          "seatNumber": "A-102",
+          "status": "Confirmed"
+        }
+      ],
+      "eventName": "Angular Developer Conference"
+    },
+    {
+      "id": "5OL2S8kujDY",
+      "userId": 2,
+      "eventId": 2,
+      "bookingDate": "2026-06-10T12:09:02.128Z",
+      "quantity": 10,
+      "totalAmount": 7990,
+      "status": "Confirmed",
+      "tickets": []
+    },
+    {
+      "id": "D7MNoXiAtt0",
+      "userId": 1,
+      "eventId": 1,
+      "bookingDate": "2026-06-10T16:38:19.416Z",
+      "quantity": 5,
+      "totalAmount": 4995,
+      "status": "Confirmed",
+      "tickets": []
+    },
+    {
+      "id": "6JADE3PKcxQ",
+      "userId": 1,
+      "eventId": "1",
+      "bookingDate": "2026-06-10T16:58:59.432Z",
+      "quantity": 5,
+      "totalAmount": 4995,
+      "status": "Confirmed",
+      "tickets": []
+    },
+    {
+      "id": "GCl1WsZePIs",
+      "userId": 1,
+      "eventId": "2",
+      "bookingDate": "2026-06-10T17:05:21.334Z",
+      "quantity": 20,
+      "totalAmount": 15980,
+      "status": "Confirmed",
+      "tickets": []
+    },
+    {
+      "id": "imQDwkA9ba4",
+      "userId": 1,
+      "eventId": "1",
+      "bookingDate": "2026-06-10T17:14:36.518Z",
+      "quantity": 5,
+      "totalAmount": 4995,
+      "status": "Confirmed",
+      "tickets": []
+    },
+    {
+      "id": "qlCAFSueVjM",
+      "userId": 2,
+      "eventId": "1",
+      "bookingDate": "2026-06-10T17:34:00.026Z",
+      "quantity": 2,
+      "totalAmount": 1998,
+      "status": "Cancelled",
+      "tickets": [],
+      "eventName": "Angular Developer Conference"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "userId": 2,
+      "title": "Booking Confirmed",
+      "message": "Your booking for Angular Developer Conference is confirmed.",
+      "type": "BookingConfirmation",
+      "isRead": false,
+      "createdAt": "2026-06-05T12:01:00Z"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "title": "Low Seat Alert",
+      "message": "VIP tickets are running low.",
+      "type": "AdminAlert",
+      "isRead": false,
+      "createdAt": "2026-06-06T09:00:00Z"
+    }
+  ],
+  "dynamicFormFields": [
+    {
+      "id": "1",
+      "key": "attendeeName",
+      "label": "Attendee Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "2",
+      "key": "age",
+      "label": "Age",
+      "type": "number",
+      "required": true,
+      "min": 18,
+      "max": 100
+    },
+    {
+      "id": "3",
+      "key": "ticketType",
+      "label": "Ticket Type",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Regular",
+        "VIP"
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

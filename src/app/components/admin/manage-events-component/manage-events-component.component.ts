@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './manage-events-component.component.html',
   styleUrl: './manage-events-component.component.css'
 })
-export class ManageEventsComponent {
+export class ManageEventsComponentComponent {
 
   events = [
     {

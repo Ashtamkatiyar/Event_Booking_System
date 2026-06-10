@@ -1,5 +1,20 @@
-.events-container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-  }
+h2 {
+
+  text-align: center;
+
+  margin-bottom: 25px;
+
+}
+
+.events-container {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 20px;
+
+  padding: 20px;
+
+}

@@ -1,39 +1,55 @@
-<div class="card">
+<div class="event-card">
+
+  <div class="card-header">
 
     <h3>{{ event.title }}</h3>
-  
-    <p>
-      <strong>Category:</strong>
-      {{ event.category }}
-    </p>
-  
-    <p>
-      <strong>Venue:</strong>
-      {{ event.venue.name }}
-    </p>
-  
-    <p>
-      <strong>City:</strong>
-      {{ event.venue.city }}
-    </p>
-  
-    <p>
-      <strong>Start Date:</strong>
-      {{ event.schedule.startDate }}
-    </p>
-  
-    <p>
-      <strong>Status:</strong>
+
+    <span class="status-badge">
       {{ event.status }}
-    </p>
-  
-    <p>
-      <strong>Available Seats:</strong>
-      {{ event.availableSeats }}
-    </p>
-  
-    <button>
-      View Details
-    </button>
-  
+    </span>
+
   </div>
+
+  <p class="category">
+    {{ event.category }}
+  </p>
+
+  <div class="info">
+
+    <p>📍 {{ event.venue.city }}</p>
+
+    <p>🏢 {{ event.venue.name }}</p>
+
+    <p>📅 {{ event.schedule.startDate }}</p>
+
+  </div>
+
+  <div class="seat-section">
+
+    <span class="seat-badge">
+      🪑 {{ event.availableSeats }} Seats Left
+    </span>
+
+  </div>
+
+  <div class="actions">
+
+    <button
+      class="details-btn"
+      (click)="viewDetails(event.id)">
+
+      View Details
+
+    </button>
+
+    <button
+  class="book-btn"
+  (click)="bookTicket(event.id)">
+
+  Book Now
+
+</button>
+
+  </div>
+
+</div>

@@ -12,3 +12,24 @@ td {
 th {
   background-color: #f5f5f5;
 }
+.cancel-btn {
+
+  background: #ef4444;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 12px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+}
+
+.cancel-btn:hover {
+
+  background: #dc2626;
+
+}

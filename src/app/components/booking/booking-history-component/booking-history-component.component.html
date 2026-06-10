@@ -9,6 +9,7 @@
             <th>Tickets</th>
             <th>Amount</th>
             <th>Status</th>
+            <th>Action</th>
         </tr>
     </thead>
 
@@ -19,8 +20,23 @@
             <td>{{ booking.id }}</td>
             <td>{{ booking.eventName }}</td>
             <td>{{ booking.quantity }}</td>
-            <td>₹{{ booking.amount }}</td>
+            <td>₹{{ booking.totalAmount }}</td>
             <td>{{ booking.status }}</td>
+            <td>
+
+  @if(booking.status === 'Confirmed') {
+
+    <button
+      class="cancel-btn"
+      (click)="cancelBooking(booking)">
+
+      Cancel
+
+    </button>
+
+  }
+
+</td>
 
         </tr>
 
