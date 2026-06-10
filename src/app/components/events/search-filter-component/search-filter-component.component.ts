@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-search-filter-component',
-  imports: [],
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './search-filter-component.component.html',
   styleUrl: './search-filter-component.component.css'
 })
 export class SearchFilterComponentComponent {
 
+  searchText = '';
+  selectedCategory = '';
+
+  @Output()
+  filterChanged = new EventEmitter<{
+    searchText: string;
+    category: string;
+  }>();
+
+  applyFilter() {
+    this.filterChanged.emit({
+      searchText: this.searchText,
+      category: this.selectedCategory
+    });
+  }
 }

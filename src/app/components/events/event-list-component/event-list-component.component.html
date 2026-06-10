@@ -1,1 +1,14 @@
-<p>event-list-component works!</p>
+<h2>Available Events</h2>
+
+<app-search-filter-component
+  (filterChanged)="applyFilters($event)">
+</app-search-filter-component>
+
+<div class="events-container">
+
+  <app-event-card-component
+    *ngFor="let event of filteredEvents"
+    [event]="event">
+  </app-event-card-component>
+
+</div>

@@ -1,1 +1,25 @@
-<p>search-filter-component works!</p>
+<div class="filter-container">
+
+    <input
+      type="text"
+      placeholder="Search Event"
+      [(ngModel)]="searchText">
+  
+    <select [(ngModel)]="selectedCategory">
+  
+      <option value="">All Categories</option>
+  
+      <option value="Music">Music</option>
+      <option value="Technology">Technology</option>
+      <option value="Sports">Sports</option>
+      <option value="Education">Education</option>
+      <option value="Business">Business</option>
+      <option value="Entertainment">Entertainment</option>
+  
+    </select>
+  
+    <button (click)="applyFilter()">
+      Search
+    </button>
+  
+  </div>
