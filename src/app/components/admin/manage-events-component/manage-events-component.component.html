@@ -1,1 +1,35 @@
-<p>manage-events-component works!</p>
+<h2>Manage Events</h2>
+
+<table>
+
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Event</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let event of events">
+      <td>{{ event.id }}</td>
+      <td>{{ event.title }}</td>
+      <td>{{ event.date }}</td>
+      <td>{{ event.location }}</td>
+      <td>₹{{ event.price }}</td>
+
+      <td>
+        <button>Edit</button>
+        <button (click)="deleteEvent(event.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+
+  </tbody>
+
+</table>

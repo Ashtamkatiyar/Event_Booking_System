@@ -1,1 +1,39 @@
-<p>manage-bookings-component works!</p>
+<h2>Manage Bookings</h2>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>User ID</th>
+            <th>Event ID</th>
+            <th>Quantity</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let booking of bookings">
+
+            <td>{{booking.id}}</td>
+            <td>{{booking.userId}}</td>
+            <td>{{booking.eventId}}</td>
+            <td>{{booking.quantity}}</td>
+            <td>₹{{booking.totalAmount}}</td>
+            <td>{{booking.status}}</td>
+
+            <td>
+                <button
+                    (click)="cancelBooking(booking.id)">
+                    Cancel Booking
+                </button>
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>

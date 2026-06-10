@@ -1,1 +1,38 @@
-<p>admin-dashboard-component works!</p>
+<div class="dashboard">
+
+    <h2>Admin Dashboard</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Users</h3>
+            <p>{{totalUsers}}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Events</h3>
+            <p>{{totalEvents}}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Bookings</h3>
+            <p>{{totalBookings}}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Revenue</h3>
+            <p>₹{{totalRevenue}}</p>
+        </div>
+
+    </div>
+
+    <h3>Recent Notifications</h3>
+
+    @for (notification of recentNotifications; track notification.title) {
+  <div>
+    <strong>{{ notification.title }}</strong>
+    <p>{{ notification.message }}</p>
+  </div>
+}
+
+</div>

@@ -1,1 +1,29 @@
-<p>booking-history-component works!</p>
+<h2>Booking History</h2>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Event</th>
+            <th>Tickets</th>
+            <th>Amount</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let booking of bookings">
+
+            <td>{{ booking.id }}</td>
+            <td>{{ booking.eventName }}</td>
+            <td>{{ booking.quantity }}</td>
+            <td>₹{{ booking.amount }}</td>
+            <td>{{ booking.status }}</td>
+
+        </tr>
+
+    </tbody>
+
+</table>

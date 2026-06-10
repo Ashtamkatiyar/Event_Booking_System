@@ -1,1 +1,35 @@
-<p>ticket-summary-component works!</p>
+<div class="ticket">
+
+    <h2>Ticket Summary</h2>
+
+    <p>
+        <strong>Booking ID:</strong>
+        {{ booking.bookingId }}
+    </p>
+
+    <p>
+        <strong>Event:</strong>
+        {{ booking.eventName }}
+    </p>
+
+    <p>
+        <strong>Attendee:</strong>
+        {{ booking.attendeeName }}
+    </p>
+
+    <p>
+        <strong>Seat Number:</strong>
+        {{ booking.seatNumber }}
+    </p>
+
+    <p>
+        <strong>Amount Paid:</strong>
+        ₹{{ booking.amount }}
+    </p>
+
+    <p>
+        <strong>Status:</strong>
+        {{ booking.status }}
+    </p>
+
+</div>
