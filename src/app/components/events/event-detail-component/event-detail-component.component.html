@@ -1,1 +1,59 @@
-<p>event-detail-component works!</p>
+<div class="detail-card" *ngIf="event">
+
+    <h2>{{ event.title }}</h2>
+  
+    <p>
+      <strong>Description:</strong>
+      {{ event.description }}
+    </p>
+  
+    <p>
+      <strong>Category:</strong>
+      {{ event.category }}
+    </p>
+  
+    <p>
+      <strong>Venue:</strong>
+      {{ event.venue.name }}
+    </p>
+  
+    <p>
+      <strong>Address:</strong>
+      {{ event.venue.address }}
+    </p>
+  
+    <p>
+      <strong>City:</strong>
+      {{ event.venue.city }}
+    </p>
+  
+    <p>
+      <strong>Start Date:</strong>
+      {{ event.schedule.startDate }}
+    </p>
+  
+    <p>
+      <strong>End Date:</strong>
+      {{ event.schedule.endDate }}
+    </p>
+  
+    <p>
+      <strong>Status:</strong>
+      {{ event.status }}
+    </p>
+  
+    <p>
+      <strong>Total Seats:</strong>
+      {{ event.totalSeats }}
+    </p>
+  
+    <p>
+      <strong>Available Seats:</strong>
+      {{ event.availableSeats }}
+    </p>
+  
+    <button>
+      Book Ticket
+    </button>
+  
+  </div>

@@ -1,82 +1,87 @@
 {
-    
-    "users": [
-  {
-    "id": 1,
-    "firstName": "Shivam",
-    "lastName": "Verma",
-    "email": "shivam.verma@example.com",
-    "phoneNumber": "9876543210",
-    "role": "Admin",
-    "createdAt": "2026-06-01T10:00:00Z",
-    "preferences": {
-      "emailNotifications": true,
-      "smsNotifications": true,
-      "eventReminders": true,
-      "promotionalUpdates": false
-    }
-  },
-  {
-    "id": 2,
-    "firstName": "Ashtam",
-    "lastName": "Katiyar",
-    "email": "ashtam.katiyar@example.com",
-    "phoneNumber": "9876543211",
-    "role": "Customer",
-    "createdAt": "2026-06-02T10:00:00Z",
-    "preferences": {
-      "emailNotifications": true,
-      "smsNotifications": false,
-      "eventReminders": true,
-      "promotionalUpdates": true
-    }
-  },
-  {
-    "id": 3,
-    "firstName": "Isha",
-    "lastName": "Choudhary",
-    "email": "isha.choudhary@example.com",
-    "phoneNumber": "9876543212",
-    "role": "Admin",
-    "createdAt": "2026-06-03T10:00:00Z",
-    "preferences": {
-      "emailNotifications": true,
-      "smsNotifications": true,
-      "eventReminders": true,
-      "promotionalUpdates": true
-    }
-  },
-  {
-    "id": 4,
-    "firstName": "Shubham",
-    "lastName": "Pandey",
-    "email": "shubham.pandey@example.com",
-    "phoneNumber": "9876543213",
-    "role": "Customer",
-    "createdAt": "2026-06-04T10:00:00Z",
-    "preferences": {
-      "emailNotifications": true,
-      "smsNotifications": false,
-      "eventReminders": true,
-      "promotionalUpdates": false
-    }
-  },
-  {
-    "id": 5,
-    "firstName": "Jatin",
-    "lastName": "Singh",
-    "email": "jatin.singh@example.com",
-    "phoneNumber": "9876543214",
-    "role": "Customer",
-    "createdAt": "2026-06-05T10:00:00Z",
-    "preferences": {
-      "emailNotifications": true,
-      "smsNotifications": true,
-      "eventReminders": false,
-      "promotionalUpdates": true
-    }
-  }
-],
+   "users": [
+{
+"id": 1,
+"firstName": "Shivam",
+"lastName": "Verma",
+"email": "[shivam.verma@example.com](mailto:shivam.verma@example.com)",
+"password": "admin123",
+"phoneNumber": "9876543210",
+"role": "Admin",
+"createdAt": "2026-06-01T10:00:00Z",
+"preferences": {
+"emailNotifications": true,
+"smsNotifications": true,
+"eventReminders": true,
+"promotionalUpdates": false
+}
+},
+{
+"id": 2,
+"firstName": "Ashtam",
+"lastName": "Katiyar",
+"email": "[ashtam.katiyar@example.com](mailto:ashtam.katiyar@example.com)",
+"password": "user123",
+"phoneNumber": "9876543211",
+"role": "Customer",
+"createdAt": "2026-06-02T10:00:00Z",
+"preferences": {
+"emailNotifications": true,
+"smsNotifications": false,
+"eventReminders": true,
+"promotionalUpdates": true
+}
+},
+{
+"id": 3,
+"firstName": "Isha",
+"lastName": "Choudhary",
+"email": "[isha.choudhary@example.com](mailto:isha.choudhary@example.com)",
+"password": "admin123",
+"phoneNumber": "9876543212",
+"role": "Admin",
+"createdAt": "2026-06-03T10:00:00Z",
+"preferences": {
+"emailNotifications": true,
+"smsNotifications": true,
+"eventReminders": true,
+"promotionalUpdates": true
+}
+},
+{
+"id": 4,
+"firstName": "Shubham",
+"lastName": "Pandey",
+"email": "[shubham.pandey@example.com](mailto:shubham.pandey@example.com)",
+"password": "user123",
+"phoneNumber": "9876543213",
+"role": "Customer",
+"createdAt": "2026-06-04T10:00:00Z",
+"preferences": {
+"emailNotifications": true,
+"smsNotifications": false,
+"eventReminders": true,
+"promotionalUpdates": false
+}
+},
+{
+"id": 5,
+"firstName": "Jatin",
+"lastName": "Singh",
+"email": "[jatin.singh@example.com](mailto:jatin.singh@example.com)",
+"password": "user123",
+"phoneNumber": "9876543214",
+"role": "Customer",
+"createdAt": "2026-06-05T10:00:00Z",
+"preferences": {
+"emailNotifications": true,
+"smsNotifications": true,
+"eventReminders": false,
+"promotionalUpdates": true
+}
+}
+]
+,
   
     "events": [
       {

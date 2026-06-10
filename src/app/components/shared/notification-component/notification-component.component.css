@@ -1,0 +1,18 @@
+.notification{
+    padding:15px;
+    border-radius:5px;
+    margin:10px 0;
+    color:white;
+  }
+  
+  .success{
+    background:green;
+  }
+  
+  .error{
+    background:red;
+  }
+  
+  .warning{
+    background:orange;
+  }
