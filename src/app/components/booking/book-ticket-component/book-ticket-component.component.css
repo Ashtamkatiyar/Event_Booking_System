@@ -1,15 +1,194 @@
-.container {
-  width: 400px;
-  margin: auto;
-  padding: 20px;
+.booking-container{
+
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:32px;
+
 }
 
-input,
-select {
-  width: 100%;
-  padding: 8px;
+.booking-card{
+
+  max-width:600px;
+
+  margin:auto;
+
+  background:#FFFFFF;
+
+  border:1px solid #E5E7EB;
+
+  border-radius:16px;
+
+  padding:32px;
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.05);
+
 }
 
-button {
-  margin-top: 10px;
+.booking-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:20px;
+
+}
+
+.booking-header h2{
+
+  color:#111827;
+
+  margin:0;
+
+}
+
+.category-badge{
+
+  background:#F3F4F6;
+
+  color:#111827;
+
+  padding:8px 14px;
+
+  border-radius:20px;
+
+  font-size:13px;
+
+  font-weight:600;
+
+}
+
+.event-title{
+
+  color:#111827;
+
+  margin-bottom:24px;
+
+}
+
+.event-info{
+
+  background:#F9FAFB;
+
+  border:1px solid #E5E7EB;
+
+  border-radius:12px;
+
+  padding:20px;
+
+  margin-bottom:24px;
+
+}
+
+.event-info p{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin:12px 0;
+
+  color:#374151;
+
+}
+
+.quantity-section{
+
+  margin-bottom:24px;
+
+}
+
+.quantity-section label{
+
+  display:block;
+
+  margin-bottom:8px;
+
+  font-weight:600;
+
+  color:#111827;
+
+}
+
+.quantity-section input{
+
+  width:100%;
+
+  padding:12px;
+
+  border:1px solid #D1D5DB;
+
+  border-radius:8px;
+
+}
+
+.quantity-section input:focus{
+
+  outline:none;
+
+  border-color:#D4AF37;
+
+}
+
+.summary{
+
+  background:#F9FAFB;
+
+  border:1px solid #E5E7EB;
+
+  border-radius:12px;
+
+  padding:18px;
+
+  margin-bottom:24px;
+
+}
+
+.summary p{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  font-size:18px;
+
+  font-weight:600;
+
+  color:#111827;
+
+}
+
+.book-btn{
+
+  width:100%;
+
+  padding:14px;
+
+  background:#111827;
+
+  color:#FFFFFF;
+
+  border:none;
+
+  border-radius:8px;
+
+  font-size:15px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+}
+
+.book-btn:hover{
+
+  background:#1F2937;
+
 }

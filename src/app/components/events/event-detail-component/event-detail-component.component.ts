@@ -4,11 +4,12 @@ import { Event } from '../../../models/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { EventService } from '../../../services/event.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-event-detail-component',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './event-detail-component.component.html',
   styleUrl: './event-detail-component.component.css'
 })
@@ -22,12 +23,11 @@ export class EventDetailComponentComponent implements OnInit {
 
 ngOnInit(): void {
 
-  const id = Number(
-    this.route.snapshot.paramMap.get('id')
-  );
+  const id =
+    this.route.snapshot.paramMap.get('id');
 
   this.eventService
-    .getEventById(id)
+    .getEventById(id!)
     .subscribe(data => {
 
       this.event = data;

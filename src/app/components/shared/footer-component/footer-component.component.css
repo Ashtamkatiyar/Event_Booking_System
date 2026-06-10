@@ -1,0 +1,51 @@
+.footer{
+
+  margin-top:60px;
+
+  background:#111827;
+
+  border-top:2px solid #D4AF37;
+
+  padding:30px 20px;
+
+}
+
+.footer-content{
+
+  max-width:1200px;
+
+  margin:auto;
+
+  text-align:center;
+
+}
+
+.footer-content h3{
+
+  color:#FFFFFF;
+
+  margin-bottom:10px;
+
+  font-size:24px;
+
+  font-weight:700;
+
+}
+
+.footer-content p{
+
+  color:#D1D5DB;
+
+  margin:6px 0;
+
+}
+
+.copyright{
+
+  margin-top:12px;
+
+  font-size:14px;
+
+  color:#9CA3AF;
+
+}

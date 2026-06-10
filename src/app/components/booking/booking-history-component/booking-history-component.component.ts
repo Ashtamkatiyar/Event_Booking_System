@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { OnInit } from '@angular/core';
 import { BookingService } from '../../../services/booking.service';
 import { EventService } from '../../../services/event.service';
-import { forkJoin } from 'rxjs';
+import { forkJoin, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-booking-history-component',
@@ -29,24 +30,39 @@ export class BookingHistoryComponent implements OnInit {
     .getBookingsByUser(Number(currentUser.id))
     .subscribe(bookings => {
 
+      if (!bookings.length) {
+
+        this.bookings = [];
+
+        return;
+
+      }
+
       const requests = bookings.map(booking =>
-        this.eventService.getEventById(
-          booking.eventId
-        )
+        this.eventService
+          .getEventById(booking.eventId)
+          .pipe(
+            catchError(() =>
+              of({
+                title: 'Deleted Event'
+              })
+            )
+          )
       );
 
       forkJoin(requests)
         .subscribe(events => {
 
-          this.bookings =
-            bookings.map((booking, index) => ({
+          this.bookings = bookings.map(
+            (booking, index) => ({
 
               ...booking,
 
               eventName:
                 events[index].title
 
-            }));
+            })
+          );
 
         });
 

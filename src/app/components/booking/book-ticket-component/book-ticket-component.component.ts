@@ -126,12 +126,11 @@ export class BookTicketComponent implements OnInit {
 }
   ngOnInit(): void {
 
-  const id = Number(
-    this.route.snapshot.paramMap.get('id')
-  );
+  const id =
+    this.route.snapshot.paramMap.get('id');
 
   this.eventService
-    .getEventById(id)
+    .getEventById(id!)
     .subscribe(data => {
 
       this.event = data;
@@ -139,6 +138,5 @@ export class BookTicketComponent implements OnInit {
     });
 
 }
-
 
 }

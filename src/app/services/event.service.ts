@@ -14,12 +14,42 @@ export class EventService {
   getEvents(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
-  getEventById(id: number) {
+  getEventById(id: string | number) {
+
   return this.http.get<any>(
     `${this.apiUrl}/${id}`
   );
+
 }
   updateEvent(
+  id: number,
+  event: any
+) {
+
+  return this.http.put(
+    `${this.apiUrl}/${id}`,
+    event
+  );
+
+}
+  deleteEvent(id: number) {
+
+  return this.http.delete(
+    `${this.apiUrl}/${id}`
+  );
+
+}
+
+createEvent(event: any) {
+
+  return this.http.post(
+    this.apiUrl,
+    event
+  );
+
+}
+
+editEvent(
   id: number,
   event: any
 ) {

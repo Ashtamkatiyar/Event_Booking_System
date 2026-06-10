@@ -62,4 +62,11 @@ getBookingById(
   );
 
 }
+  getAllBookings() {
+
+  return this.http.get<any[]>(
+    this.apiUrl
+  );
+
+}
 }

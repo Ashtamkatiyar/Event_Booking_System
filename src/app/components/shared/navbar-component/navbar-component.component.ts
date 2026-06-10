@@ -14,21 +14,30 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class NavbarComponentComponent {
 
-  currentUser = JSON.parse(
-    localStorage.getItem('currentUser') || '{}'
-  );
+  constructor(
+    private router: Router
+  ) {}
+
+  get currentUser() {
+    return JSON.parse(
+      localStorage.getItem('currentUser') || '{}'
+    );
+  }
 
   get isAdmin(): boolean {
     return this.currentUser?.role === 'Admin';
   }
 
-  constructor(
-    private router: Router
-  ) {}
-
   logout() {
-    localStorage.removeItem('currentUser');
-    this.router.navigate(['/login']);
+
+    localStorage.removeItem(
+      'currentUser'
+    );
+
+    this.router.navigate([
+      '/login'
+    ]);
+
   }
 
 }

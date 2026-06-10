@@ -1,35 +1,153 @@
-<h2>Manage Events</h2>
+<div class="manage-events-container">
 
-<table>
+  <h2>Manage Events</h2>
 
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Event</th>
-      <th>Date</th>
-      <th>Location</th>
-      <th>Price</th>
-      <th>Action</th>
-    </tr>
-  </thead>
+  <div class="event-form-card">
 
-  <tbody>
+    <h3>
 
-    <tr *ngFor="let event of events">
-      <td>{{ event.id }}</td>
-      <td>{{ event.title }}</td>
-      <td>{{ event.date }}</td>
-      <td>{{ event.location }}</td>
-      <td>₹{{ event.price }}</td>
+      @if(!isEditing) {
+        Add New Event
+      }
 
-      <td>
-        <button>Edit</button>
-        <button (click)="deleteEvent(event.id)">
-          Delete
+      @if(isEditing) {
+        Update Event
+      }
+
+    </h3>
+
+    <div class="form-grid">
+
+      <input
+        type="text"
+        placeholder="Event Title"
+        [(ngModel)]="newEvent.title">
+      <input
+  type="text"
+  placeholder="Description"
+  [(ngModel)]="newEvent.description">
+
+      <input
+        type="text"
+        placeholder="Category"
+        [(ngModel)]="newEvent.category">
+    <input
+  type="text"
+  placeholder="Venue Name"
+  [(ngModel)]="newEvent.venueName">
+
+<input
+  type="text"
+  placeholder="Venue Address"
+  [(ngModel)]="newEvent.venueAddress">
+
+      <input
+        type="text"
+        placeholder="City"
+        [(ngModel)]="newEvent.city">
+
+    <input
+  type="number"
+  placeholder="Ticket Price"
+  [(ngModel)]="newEvent.price">
+      <input
+        type="number"
+        placeholder="Available Seats"
+        [(ngModel)]="newEvent.availableSeats">
+
+    </div>
+
+
+    @if(!isEditing) {
+
+      <button
+        class="primary-btn"
+        (click)="createEvent()">
+
+        Add Event
+
+      </button>
+
+    }
+
+    @if(isEditing) {
+
+      <button
+        class="primary-btn"
+        (click)="updateEvent()">
+
+        Update Event
+
+      </button>
+
+    }
+
+  </div>
+
+  <div class="events-grid">
+
+    <div
+      class="event-card"
+      *ngFor="let event of events">
+
+      <h3>
+        {{ event.title }}
+      </h3>
+
+      <p class="category">
+        {{ event.category }}
+      </p>
+
+      <div class="event-info">
+
+        <p>
+
+          <strong>City</strong>
+
+          {{ event.venue.city }}
+
+        </p>
+
+        <p>
+
+          <strong>Seats</strong>
+
+          {{ event.availableSeats }}
+
+        </p>
+
+        <p>
+
+          <strong>Status</strong>
+
+          {{ event.status }}
+
+        </p>
+
+      </div>
+
+      <div class="actions">
+
+        <button
+          class="edit-btn"
+          (click)="editEvent(event)">
+
+          Edit
+
         </button>
-      </td>
-    </tr>
 
-  </tbody>
+        <button
+          class="delete-btn"
+          (click)="deleteEvent(event.id)">
 
-</table>
+          Delete
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

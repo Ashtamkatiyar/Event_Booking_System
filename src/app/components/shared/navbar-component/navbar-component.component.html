@@ -1,42 +1,77 @@
 <nav class="navbar">
 
-  <h2>EventHub</h2>
+  <div class="logo">
 
-  <ul>
+    <h2>EventHub</h2>
+
+  </div>
+
+  <ul class="nav-links">
 
     <li>
-      <a routerLink="/events">
+      <a
+        routerLink="/events"
+        routerLinkActive="active-link">
+
         Events
+
       </a>
     </li>
 
     <li>
-      <a routerLink="/booking-history">
-        Booking History
+      <a
+        routerLink="/booking-history"
+        routerLinkActive="active-link">
+
+        Bookings
+
       </a>
     </li>
 
-   @if(isAdmin) {
+    @if(isAdmin) {
 
-  <li>
-    <a routerLink="/admin-dashboard">
-      Dashboard
-    </a>
-  </li>
+      <li>
+        <a
+          routerLink="/admin-dashboard"
+          routerLinkActive="active-link">
 
-  <li>
-    <a routerLink="/manage-events">
-      Manage Events
-    </a>
-  </li>
+          Dashboard
 
-  <li>
-    <a routerLink="/manage-bookings">
-      Manage Bookings
-    </a>
-  </li>
+        </a>
+      </li>
 
-}
+      <li>
+        <a
+          routerLink="/manage-events"
+          routerLinkActive="active-link">
+
+          Manage Events
+
+        </a>
+      </li>
+
+      <li>
+        <a
+          routerLink="/manage-bookings"
+          routerLinkActive="active-link">
+
+          Manage Bookings
+
+        </a>
+      </li>
+
+      <li>
+
+        <span class="role-badge">
+
+          Admin
+
+        </span>
+
+      </li>
+
+    }
+
     <li>
 
       <button

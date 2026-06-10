@@ -1,39 +1,95 @@
-<h2>Manage Bookings</h2>
+<div class="manage-bookings-container">
 
-<table>
+  <h2>Manage Bookings</h2>
+    <div class="summary-grid">
 
-    <thead>
-        <tr>
-            <th>Booking ID</th>
-            <th>User ID</th>
-            <th>Event ID</th>
-            <th>Quantity</th>
-            <th>Total Amount</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-    </thead>
+  <div class="summary-card">
 
-    <tbody>
+    <h4>Total Bookings</h4>
 
-        <tr *ngFor="let booking of bookings">
+    <p>{{ totalBookings }}</p>
 
-            <td>{{booking.id}}</td>
-            <td>{{booking.userId}}</td>
-            <td>{{booking.eventId}}</td>
-            <td>{{booking.quantity}}</td>
-            <td>₹{{booking.totalAmount}}</td>
-            <td>{{booking.status}}</td>
+  </div>
 
-            <td>
-                <button
-                    (click)="cancelBooking(booking.id)">
-                    Cancel Booking
-                </button>
-            </td>
+  <div class="summary-card">
 
-        </tr>
+    <h4>Confirmed</h4>
 
-    </tbody>
+    <p>{{ confirmedBookings }}</p>
 
-</table>
+  </div>
+
+  <div class="summary-card">
+
+    <h4>Cancelled</h4>
+
+    <p>{{ cancelledBookings }}</p>
+
+  </div>
+
+  <div class="summary-card">
+
+    <h4>Revenue</h4>
+
+    <p>₹{{ totalRevenue }}</p>
+
+  </div>
+
+</div>
+  <div class="booking-grid">
+
+    <div
+      class="booking-card"
+      *ngFor="let booking of bookings">
+
+      <h3>
+
+        Booking #{{ booking.id }}
+
+      </h3>
+
+      <p>
+
+        <strong>User ID</strong>
+
+        {{ booking.userId }}
+
+      </p>
+
+      <p>
+
+        <strong>Event</strong>
+
+        {{ booking.eventName }}
+
+      </p>
+
+      <p>
+
+        <strong>Tickets</strong>
+
+        {{ booking.quantity }}
+
+      </p>
+
+      <p>
+
+        <strong>Amount</strong>
+
+        ₹{{ booking.totalAmount }}
+
+      </p>
+
+      <span
+  class="status"
+  [class.cancelled]="booking.status === 'Cancelled'">
+
+  {{ booking.status }}
+
+</span>
+
+    </div>
+
+  </div>
+
+</div>

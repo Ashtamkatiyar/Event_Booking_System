@@ -29,10 +29,19 @@
     <h3>Recent Notifications</h3>
 
     @for (notification of recentNotifications; track notification.title) {
-  <div>
-    <strong>{{ notification.title }}</strong>
-    <p>{{ notification.message }}</p>
+
+  <div class="notification-card">
+
+    <strong>
+      {{ notification.title }}
+    </strong>
+
+    <p>
+      {{ notification.message }}
+    </p>
+
   </div>
+
 }
 
 </div>

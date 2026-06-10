@@ -1,45 +1,71 @@
-<h2>Booking History</h2>
+<div class="booking-container">
 
-<table>
+  <h2>Booking History</h2>
 
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Event</th>
-            <th>Tickets</th>
-            <th>Amount</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-    </thead>
+  <div class="booking-grid">
 
-    <tbody>
+    <div
+      class="booking-card"
+      *ngFor="let booking of bookings">
 
-        <tr *ngFor="let booking of bookings">
+      <div class="booking-header">
 
-            <td>{{ booking.id }}</td>
-            <td>{{ booking.eventName }}</td>
-            <td>{{ booking.quantity }}</td>
-            <td>₹{{ booking.totalAmount }}</td>
-            <td>{{ booking.status }}</td>
-            <td>
+        <h3>
+          {{ booking.eventName }}
+        </h3>
 
-  @if(booking.status === 'Confirmed') {
+        <span
+          class="status"
+          [class.cancelled]="booking.status === 'Cancelled'">
 
-    <button
-      class="cancel-btn"
-      (click)="cancelBooking(booking)">
+          {{ booking.status }}
 
-      Cancel
+        </span>
 
-    </button>
+      </div>
 
-  }
+      <div class="booking-details">
 
-</td>
+        <p>
 
-        </tr>
+          <strong>Booking ID</strong>
 
-    </tbody>
+          {{ booking.id }}
 
-</table>
+        </p>
+
+        <p>
+
+          <strong>Tickets</strong>
+
+          {{ booking.quantity }}
+
+        </p>
+
+        <p>
+
+          <strong>Amount</strong>
+
+          ₹{{ booking.totalAmount }}
+
+        </p>
+
+      </div>
+
+      @if(booking.status === 'Confirmed' && booking.eventName !== 'Deleted Event')  {
+
+        <button
+          class="cancel-btn"
+          (click)="cancelBooking(booking)">
+
+          Cancel Booking
+
+        </button>
+
+      }
+
+    </div>
+
+  </div>
+
+</div>

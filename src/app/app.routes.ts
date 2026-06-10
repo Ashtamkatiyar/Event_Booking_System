@@ -11,17 +11,54 @@ import { BookingHistoryComponent } from './components/booking/booking-history-co
 
 import { AdminDashboardComponent } from './components/admin/admin-dashboard-component/admin-dashboard-component.component';
 
+import { ManageEventsComponentComponent } from './components/admin/manage-events-component/manage-events-component.component';
+
+import { ManageBookingsComponent } from './components/admin/manage-bookings-component/manage-bookings-component.component';
+
+import { authGuard } from './guards/auth.guard';
+import { adminGuard } from './guards/admin.guard';
+
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
-  { path: 'events', component: EventListComponentComponent },
-  { path: 'events/:id', component: EventDetailComponentComponent },
+  {
+  path: 'events',
+  component: EventListComponentComponent,
+  canActivate: [authGuard]
+  },
+  {
+  path: 'events/:id',
+  component: EventDetailComponentComponent,
+  canActivate: [authGuard]
+},
 
-  { path: 'book-ticket/:id', component: BookTicketComponent },
-  { path: 'booking-history', component: BookingHistoryComponent },
+  {
+  path: 'book-ticket/:id',
+  component: BookTicketComponent,
+  canActivate: [authGuard]
+  },
+  {
+  path: 'booking-history',
+  component: BookingHistoryComponent,
+  canActivate: [authGuard]
+},
 
-  { path: 'admin-dashboard', component: AdminDashboardComponent }
+  {
+  path: 'admin-dashboard',
+  component: AdminDashboardComponent,
+  canActivate: [adminGuard]
+},
+  {
+  path: 'manage-events',
+  component: ManageEventsComponentComponent,
+  canActivate: [adminGuard]
+},
+  {
+  path: 'manage-bookings',
+  component: ManageBookingsComponent,
+  canActivate: [adminGuard]
+}
 ];
