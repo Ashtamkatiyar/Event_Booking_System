@@ -9,9 +9,27 @@ export class NotificationService {
   private apiUrl =
     'http://localhost:3000/notifications';
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) {}
 
   getNotifications() {
-    return this.http.get<any[]>(this.apiUrl);
+
+    return this.http.get<any[]>(
+      this.apiUrl
+    );
+
   }
+
+  createNotification(
+    notification: any
+  ) {
+
+    return this.http.post(
+      this.apiUrl,
+      notification
+    );
+
+  }
+
 }

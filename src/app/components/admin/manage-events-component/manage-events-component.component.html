@@ -16,47 +16,21 @@
 
     </h3>
 
-    <div class="form-grid">
+   <div
+  class="form-group"
+  *ngFor="let field of formFields">
 
-      <input
-        type="text"
-        placeholder="Event Title"
-        [(ngModel)]="newEvent.title">
-      <input
-  type="text"
-  placeholder="Description"
-  [(ngModel)]="newEvent.description">
+  <label>
 
-      <input
-        type="text"
-        placeholder="Category"
-        [(ngModel)]="newEvent.category">
-    <input
-  type="text"
-  placeholder="Venue Name"
-  [(ngModel)]="newEvent.venueName">
+    {{ field.label }}
 
-<input
-  type="text"
-  placeholder="Venue Address"
-  [(ngModel)]="newEvent.venueAddress">
+  </label>
 
-      <input
-        type="text"
-        placeholder="City"
-        [(ngModel)]="newEvent.city">
-
-    <input
-  type="number"
-  placeholder="Ticket Price"
-  [(ngModel)]="newEvent.price">
-      <input
-        type="number"
-        placeholder="Available Seats"
-        [(ngModel)]="newEvent.availableSeats">
-
-    </div>
-
+  <input
+  [type]="field.type"
+  [placeholder]="field.label"
+  [(ngModel)]="newEvent[field.key]">
+</div>
 
     @if(!isEditing) {
 

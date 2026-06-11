@@ -1,4 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  signal
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,8 +15,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class SearchFilterComponentComponent {
 
-  searchText = '';
-  selectedCategory = '';
+  searchText = signal('');
+
+selectedCategory = signal('');
 
   @Output()
   filterChanged = new EventEmitter<{
@@ -20,9 +26,16 @@ export class SearchFilterComponentComponent {
   }>();
 
   applyFilter() {
-    this.filterChanged.emit({
-      searchText: this.searchText,
-      category: this.selectedCategory
-    });
-  }
+
+  this.filterChanged.emit({
+
+    searchText:
+      this.searchText(),
+
+    category:
+      this.selectedCategory()
+
+  });
+
+}
 }

@@ -7,23 +7,41 @@ import { EventService } from '../../../services/event.service';
 import { Event } from '../../../models/event.model';
 import { BookingService } from '../../../services/booking.service';
 import { Booking } from '../../../models/booking.model';
+import {
+  FormControl,
+  ReactiveFormsModule
+} from '@angular/forms';
+
+import {
+  bookingQuantityValidator
+} from '../../../validators/booking-quantity.validator';
+
+import { NotificationService }
+from '../../../services/notification.service';
 
 @Component({
   selector: 'app-book-ticket-component',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, ReactiveFormsModule],
   templateUrl: './book-ticket-component.component.html',
   styleUrl: './book-ticket-component.component.css'
 })
 export class BookTicketComponent implements OnInit {
 
   event!: Event;
-  quantity = 1;
+  quantityControl =
+  new FormControl(1);
 
+get quantity() {
+
+  return this.quantityControl.value || 1;
+
+}
   constructor(
   private route: ActivatedRoute,
   private eventService: EventService,
-  private bookingService: BookingService
+  private bookingService: BookingService,
+  private notificationService: NotificationService
 ){}
 
  bookTicket() {
@@ -94,7 +112,22 @@ export class BookTicketComponent implements OnInit {
 
               this.event.availableSeats =
                 updatedEvent.availableSeats;
+              
+                this.notificationService
+  .createNotification({
 
+    id: Date.now().toString(),
+
+    message:
+      `New booking for ${this.event.title}`,
+
+    type: 'Booking',
+
+    createdAt:
+      new Date().toISOString()
+
+  })
+  .subscribe();
               alert(
                 'Booking Successful'
               );
@@ -131,11 +164,21 @@ export class BookTicketComponent implements OnInit {
 
   this.eventService
     .getEventById(id!)
-    .subscribe(data => {
+    this.eventService
+  .getEventById(id!)
+  .subscribe(data => {
 
-      this.event = data;
+    this.event = data;
 
-    });
+    this.quantityControl =
+      new FormControl(
+        1,
+        bookingQuantityValidator(
+          this.event.availableSeats
+        )
+      );
+
+  });
 
 }
 

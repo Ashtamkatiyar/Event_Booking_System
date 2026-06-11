@@ -26,9 +26,14 @@
 
   <div class="seat-section">
 
-    <span class="seat-badge">
-      🪑 {{ event.availableSeats }} Seats Left
-    </span>
+    <p
+  appLowSeatWarning
+  [seats]="event.availableSeats">
+
+  Available Seats:
+  {{ event.availableSeats }}
+
+</p>
 
   </div>
 

@@ -59,10 +59,22 @@
       </label>
 
       <input
-        type="number"
-        min="1"
-        [max]="event.availableSeats"
-        [(ngModel)]="quantity">
+  type="number"
+  min="1"
+  [formControl]="quantityControl">
+
+  @if(
+  quantityControl.errors?.['seatsExceeded']
+){
+
+  <small class="error">
+
+    Booking quantity exceeds
+    available seats.
+
+  </small>
+
+}
 
     </div>
 
@@ -78,9 +90,10 @@
 
     </div>
 
-    <button
-      class="book-btn"
-      (click)="bookTicket()">
+  <button
+  class="book-btn"
+  [disabled]="quantityControl.invalid"
+  (click)="bookTicket()">
 
       Confirm Booking
 

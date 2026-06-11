@@ -5,11 +5,14 @@ import { BookingService } from '../../../services/booking.service';
 import { EventService } from '../../../services/event.service';
 import { forkJoin, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { BookingStatusPipe } from '../../../pipes/booking-status.pipe';
+import { NotificationService }
+from '../../../services/notification.service';
 
 @Component({
   selector: 'app-booking-history-component',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BookingStatusPipe],
   templateUrl: './booking-history-component.component.html',
   styleUrl: './booking-history-component.component.css'
 })
@@ -18,7 +21,8 @@ export class BookingHistoryComponent implements OnInit {
   bookings: any[] = [];
   constructor(
   private bookingService: BookingService,
-  private eventService: EventService
+  private eventService: EventService,
+  private notificationService: NotificationService
 ) {}
   ngOnInit(): void {
 
@@ -117,7 +121,21 @@ export class BookingHistoryComponent implements OnInit {
 
                     booking.status =
                       'Cancelled';
+                    this.notificationService
+  .createNotification({
 
+    id: Date.now().toString(),
+
+    message:
+      `Booking cancelled for ${booking.eventName}`,
+
+    type: 'Cancellation',
+
+    createdAt:
+      new Date().toISOString()
+
+  })
+  .subscribe();
                     alert(
                       'Booking Cancelled'
                     );

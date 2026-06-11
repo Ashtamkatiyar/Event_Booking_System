@@ -83,6 +83,50 @@
   ],
   "events": [
     {
+      "id": "1",
+      "title": "Angular Developer Conference",
+      "description": "Latest Angular trends and best practices.",
+      "category": "Technology",
+      "venue": {
+        "name": "India Expo Centre",
+        "address": "Knowledge Park II",
+        "city": "Greater Noida",
+        "state": "Uttar Pradesh"
+      },
+      "organizer": {
+        "id": 1,
+        "name": "Tech Events India",
+        "email": "contact@techindia.com",
+        "contactNumber": "9876543000"
+      },
+      "schedule": {
+        "startDate": "2026-07-10",
+        "endDate": "2026-07-10",
+        "startTime": "09:00",
+        "endTime": "18:00"
+      },
+      "ticketCategories": [
+        {
+          "id": 1,
+          "name": "Regular",
+          "price": 999,
+          "quota": 200,
+          "remainingTickets": 150
+        },
+        {
+          "id": 2,
+          "name": "VIP",
+          "price": 2499,
+          "quota": 50,
+          "remainingTickets": 35
+        }
+      ],
+      "totalSeats": 250,
+      "availableSeats": 180,
+      "status": "Upcoming",
+      "createdAt": "2026-06-01T10:00:00Z"
+    },
+    {
       "id": "2",
       "title": "Music Night 2026",
       "description": "Live music concert featuring top artists.",
@@ -109,25 +153,24 @@
         {
           "id": 3,
           "name": "General",
-          "price": 799,
-          "quota": 500,
-          "remainingTickets": 420
+          "price": "650",
+          "quota": "15",
+          "remainingTickets": "15"
         }
       ],
-      "totalSeats": 500,
-      "availableSeats": 400,
+      "totalSeats": "15",
+      "availableSeats": "15",
       "status": "Upcoming",
       "createdAt": "2026-06-02T10:00:00Z"
     },
     {
-      "id": "QaI1ffCVSN4",
       "title": "Python-AI Masterclass",
-      "description": "New Event",
-      "category": "Technology",
+      "description": "All topics for Python-AI will be discussed",
+      "category": "Education",
       "venue": {
-        "name": "To Be Announced",
-        "address": "TBA",
-        "city": "Ghaziabad",
+        "name": "Remote",
+        "address": "Remote",
+        "city": "Remote",
         "state": "India"
       },
       "organizer": {
@@ -137,8 +180,8 @@
         "contactNumber": "9999999999"
       },
       "schedule": {
-        "startDate": "2026-06-10",
-        "endDate": "2026-06-10",
+        "startDate": "2026-06-11",
+        "endDate": "2026-06-11",
         "startTime": "10:00",
         "endTime": "18:00"
       },
@@ -146,52 +189,16 @@
         {
           "id": 1,
           "name": "Regular",
-          "price": 999,
-          "quota": 250,
-          "remainingTickets": 250
+          "price": 200,
+          "quota": 100,
+          "remainingTickets": 100
         }
       ],
-      "totalSeats": 250,
-      "availableSeats": 250,
+      "totalSeats": 100,
+      "availableSeats": 100,
       "status": "Upcoming",
-      "createdAt": "2026-06-10T18:21:53.638Z"
-    },
-    {
-      "title": "CSK vs MI Final",
-      "description": "IPL final between the two giants",
-      "category": "Sports",
-      "venue": {
-        "name": "Chepauk Stadium",
-        "address": "Tamil Nadu",
-        "city": "Chennai",
-        "state": "India"
-      },
-      "organizer": {
-        "id": 1,
-        "name": "Admin",
-        "email": "admin@gmail.com",
-        "contactNumber": "9999999999"
-      },
-      "schedule": {
-        "startDate": "2026-06-10",
-        "endDate": "2026-06-10",
-        "startTime": "10:00",
-        "endTime": "18:00"
-      },
-      "ticketCategories": [
-        {
-          "id": 1,
-          "name": "Regular",
-          "price": 9000,
-          "quota": 450,
-          "remainingTickets": 450
-        }
-      ],
-      "totalSeats": 450,
-      "availableSeats": 440,
-      "status": "Upcoming",
-      "createdAt": "2026-06-10T20:26:35.758Z",
-      "id": "Sm0-1aEtiZg"
+      "createdAt": "2026-06-11T08:32:02.743Z",
+      "id": "wykG_oAkfe8"
     }
   ],
   "bookings": [
@@ -202,7 +209,7 @@
       "bookingDate": "2026-06-05T12:00:00Z",
       "quantity": 2,
       "totalAmount": 1998,
-      "status": "Cancelled",
+      "status": "Confirmed",
       "tickets": [
         {
           "id": 1,
@@ -222,8 +229,7 @@
           "seatNumber": "A-102",
           "status": "Confirmed"
         }
-      ],
-      "eventName": "Angular Developer Conference"
+      ]
     },
     {
       "id": "5OL2S8kujDY",
@@ -248,7 +254,7 @@
     {
       "id": "6JADE3PKcxQ",
       "userId": 1,
-      "eventId": null,
+      "eventId": "1",
       "bookingDate": "2026-06-10T16:58:59.432Z",
       "quantity": 5,
       "totalAmount": 4995,
@@ -268,85 +274,20 @@
     {
       "id": "imQDwkA9ba4",
       "userId": 1,
-      "eventId": null,
+      "eventId": "1",
       "bookingDate": "2026-06-10T17:14:36.518Z",
       "quantity": 5,
       "totalAmount": 4995,
-      "status": "Confirmed",
-      "tickets": []
-    },
-    {
-      "id": "qlCAFSueVjM",
-      "userId": 2,
-      "eventId": null,
-      "bookingDate": "2026-06-10T17:34:00.026Z",
-      "quantity": 2,
-      "totalAmount": 1998,
-      "status": "Cancelled",
-      "tickets": [],
-      "eventName": "Angular Developer Conference"
-    },
-    {
-      "id": "wrXI-aW9uFE",
-      "userId": 1,
-      "eventId": "2",
-      "bookingDate": "2026-06-10T18:46:21.805Z",
-      "quantity": 10,
-      "totalAmount": 7990,
-      "status": "Cancelled",
-      "tickets": [],
-      "eventName": "Music Night 2026"
-    },
-    {
-      "id": "alY-k-d6DfA",
-      "userId": 1,
-      "eventId": "2",
-      "bookingDate": "2026-06-10T18:50:17.147Z",
-      "quantity": 10,
-      "totalAmount": 7990,
-      "status": "Cancelled",
-      "tickets": [],
-      "eventName": "Music Night 2026"
-    },
-    {
-      "id": "LLoOdq_L0Qc",
-      "userId": 1,
-      "eventId": "Sm0-1aEtiZg",
-      "bookingDate": "2026-06-10T20:27:00.275Z",
-      "quantity": 3,
-      "totalAmount": 27000,
-      "status": "Confirmed",
-      "tickets": []
-    },
-    {
-      "id": "amDabawkphQ",
-      "userId": 4,
-      "eventId": "Sm0-1aEtiZg",
-      "bookingDate": "2026-06-10T20:28:02.226Z",
-      "quantity": 7,
-      "totalAmount": 63000,
       "status": "Confirmed",
       "tickets": []
     }
   ],
   "notifications": [
     {
-      "id": "1",
-      "userId": 2,
-      "title": "Booking Confirmed",
-      "message": "Your booking for Angular Developer Conference is confirmed.",
-      "type": "BookingConfirmation",
-      "isRead": false,
-      "createdAt": "2026-06-05T12:01:00Z"
-    },
-    {
-      "id": "2",
-      "userId": 1,
-      "title": "Low Seat Alert",
-      "message": "VIP tickets are running low.",
-      "type": "AdminAlert",
-      "isRead": false,
-      "createdAt": "2026-06-06T09:00:00Z"
+      "id": "ZBUHAr6rcKU",
+      "message": "New event created: IPL Final",
+      "type": "Event",
+      "createdAt": "2026-06-11T09:25:37.111Z"
     }
   ],
   "dynamicFormFields": [

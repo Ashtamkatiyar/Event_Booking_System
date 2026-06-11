@@ -5,12 +5,18 @@
   <div class="filter-container">
 
     <input
-      type="text"
-      placeholder="Search by event title..."
-      [(ngModel)]="searchText">
+  type="text"
+  placeholder="Search by event title..."
+  [ngModel]="searchText()"
+  (ngModelChange)="
+    searchText.set($event)
+  ">
 
     <select
-      [(ngModel)]="selectedCategory">
+  [ngModel]="selectedCategory()"
+  (ngModelChange)="
+    selectedCategory.set($event)
+  ">
 
       <option value="">
         All Categories

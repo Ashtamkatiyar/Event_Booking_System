@@ -1,15 +1,11 @@
-export type NotificationType =
-  | 'BookingConfirmation'
-  | 'EventReminder'
-  | 'Cancellation'
-  | 'AdminAlert';
-
 export interface Notification {
-  id: number;
-  userId: number;
-  title: string;
+
+  id: string;
+
   message: string;
-  type: NotificationType;
-  isRead: boolean;
+
+  type: string;
+
   createdAt: string;
+
 }

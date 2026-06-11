@@ -17,6 +17,7 @@ import { ManageBookingsComponent } from './components/admin/manage-bookings-comp
 
 import { authGuard } from './guards/auth.guard';
 import { adminGuard } from './guards/admin.guard';
+import { ProfileComponentComponent } from './components/profile/profile-component/profile-component.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -60,5 +61,9 @@ export const routes: Routes = [
   path: 'manage-bookings',
   component: ManageBookingsComponent,
   canActivate: [adminGuard]
+}, 
+  {
+  path: 'profile',
+  component: ProfileComponentComponent
 }
 ];

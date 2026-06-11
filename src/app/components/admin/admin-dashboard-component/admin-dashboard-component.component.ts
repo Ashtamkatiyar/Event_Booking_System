@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 import { UserService } from '../../../services/user.service';
 import { EventService } from '../../../services/event.service';
 import { BookingService } from '../../../services/booking.service';
 
 import { forkJoin } from 'rxjs';
 
+import { NotificationService }
+from '../../../services/notification.service';
+
 @Component({
   selector: 'app-admin-dashboard-component',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './admin-dashboard-component.component.html',
   styleUrl: './admin-dashboard-component.component.css'
 })
@@ -23,7 +27,9 @@ export class AdminDashboardComponent implements OnInit {
   constructor(
   private userService: UserService,
   private eventService: EventService,
-  private bookingService: BookingService
+  private bookingService: BookingService,
+  private notificationService:
+    NotificationService
 ) {}
 
   ngOnInit(): void {
@@ -71,16 +77,31 @@ export class AdminDashboardComponent implements OnInit {
 
   });
 
+  this.notificationService
+    .getNotifications()
+    .subscribe(data => {
+
+      this.recentNotifications =
+
+        data.sort(
+
+          (a, b) =>
+
+            new Date(
+              b.createdAt
+            ).getTime()
+
+            -
+
+            new Date(
+              a.createdAt
+            ).getTime()
+
+        );
+
+    });
+
 }
-  recentNotifications = [
-    {
-      title: 'Booking Confirmed',
-      message: 'Angular Developer Conference booking confirmed.'
-    },
-    {
-      title: 'Low Seat Alert',
-      message: 'VIP tickets are running low.'
-    }
-  ];
+  recentNotifications: any[] = [];
 
 }

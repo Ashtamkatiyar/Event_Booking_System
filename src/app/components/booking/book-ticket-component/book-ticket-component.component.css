@@ -192,3 +192,23 @@
   background:#1F2937;
 
 }
+
+.error{
+
+  color:#dc2626;
+
+  font-size:13px;
+
+  margin-top:8px;
+
+  display:block;
+
+}
+
+.book-btn:disabled{
+
+  opacity:.5;
+
+  cursor:not-allowed;
+
+}

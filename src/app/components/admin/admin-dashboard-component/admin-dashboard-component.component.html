@@ -32,14 +32,29 @@
 
   <div class="notification-card">
 
-    <strong>
-      {{ notification.title }}
-    </strong>
+    <div class="notification-header">
 
-    <p>
-      {{ notification.message }}
-    </p>
+  <strong>
 
+    {{ notification.type }}
+
+  </strong>
+
+  <span>
+
+    {{
+      notification.createdAt | date:'short'
+    }}
+
+  </span>
+
+</div>
+
+<p>
+
+  {{ notification.message }}
+
+</p>
   </div>
 
 }

@@ -119,3 +119,43 @@
   color:#6B7280;
 
 }
+.notification-card{
+
+  background:#FFFFFF;
+
+  border-left:4px solid #D4AF37;
+
+  padding:16px;
+
+  border-radius:10px;
+
+  margin-bottom:12px;
+
+  box-shadow:
+    0 2px 8px rgba(0,0,0,.06);
+
+}
+
+.notification-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-bottom:8px;
+
+}
+
+.notification-header strong{
+
+  color:#111827;
+
+}
+
+.notification-header span{
+
+  color:#6B7280;
+
+  font-size:13px;
+
+}

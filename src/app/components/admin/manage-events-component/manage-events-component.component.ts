@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { OnInit } from '@angular/core';
 import { EventService } from '../../../services/event.service';
 import { FormsModule } from '@angular/forms';
+import { NotificationService }
+from '../../../services/notification.service';
 
 @Component({
   selector: 'app-manage-events-component',
@@ -14,32 +16,75 @@ import { FormsModule } from '@angular/forms';
 export class ManageEventsComponentComponent implements OnInit {
 
   events: any[] = [];
-  newEvent = {
-
+  newEvent: any = {
   title: '',
-
   description: '',
-
   category: '',
-
   venueName: '',
-
   venueAddress: '',
-
   city: '',
-
   price: 0,
-
   availableSeats: 0
-
 };
+  formFields = [
+
+  {
+    key: 'title',
+    label: 'Event Title',
+    type: 'text'
+  },
+
+  {
+    key: 'description',
+    label: 'Description',
+    type: 'text'
+  },
+
+  {
+    key: 'category',
+    label: 'Category',
+    type: 'text'
+  },
+
+  {
+    key: 'venueName',
+    label: 'Venue Name',
+    type: 'text'
+  },
+
+  {
+    key: 'venueAddress',
+    label: 'Venue Address',
+    type: 'text'
+  },
+
+  {
+    key: 'city',
+    label: 'City',
+    type: 'text'
+  },
+
+  {
+    key: 'price',
+    label: 'Ticket Price',
+    type: 'number'
+  },
+
+  {
+    key: 'availableSeats',
+    label: 'Available Seats',
+    type: 'number'
+  }
+
+];
 
   isEditing = false;
 
   editingEventId: number | null = null;
 
   constructor(
-  private eventService: EventService
+  private eventService: EventService,
+  private notificationService: NotificationService
   ) {}
 
   ngOnInit(): void {
@@ -169,33 +214,28 @@ export class ManageEventsComponentComponent implements OnInit {
     .subscribe({
 
       next: () => {
+        
+        this.notificationService
+    .createNotification({
 
-        alert(
-          'Event Added Successfully'
-        );
+      id: Date.now().toString(),
 
-        this.loadEvents();
+      message:
+        `New event created: ${event.title}`,
 
-        this.newEvent = {
+      type: 'Event',
 
-  title: '',
+      createdAt:
+        new Date().toISOString()
 
-  description: '',
+    })
+    .subscribe();
 
-  category: '',
+  alert(
+    'Event Added Successfully'
+  );
 
-  venueName: '',
-
-  venueAddress: '',
-
-  city: '',
-
-  price: 0,
-
-  availableSeats: 0
-
-};
-
+  this.loadEvents();
       }
 
     });
