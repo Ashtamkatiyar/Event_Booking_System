@@ -24,7 +24,8 @@ export class ManageEventsComponentComponent implements OnInit {
   venueAddress: '',
   city: '',
   price: 0,
-  availableSeats: 0
+  availableSeats: 0,
+  imageUrl: ''
 };
   formFields = [
 
@@ -131,7 +132,80 @@ export class ManageEventsComponentComponent implements OnInit {
     });
 
 }
+onImageSelected(event: any): void {
+
+  const file = event.target.files[0];
+
+  if (!file) {
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+
+    alert(
+      'Maximum image size is 5 MB'
+    );
+
+    return;
+  }
+
+  const img = new Image();
+
+  const reader = new FileReader();
+
+  reader.onload = (e: any) => {
+
+    img.src = e.target.result;
+
+  };
+
+  img.onload = () => {
+
+    const canvas =
+      document.createElement('canvas');
+
+    const maxWidth = 800;
+
+    const scale =
+      maxWidth / img.width;
+
+    canvas.width = maxWidth;
+
+    canvas.height =
+      img.height * scale;
+
+    const ctx =
+      canvas.getContext('2d');
+
+    ctx?.drawImage(
+      img,
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
+    this.newEvent.imageUrl =
+      canvas.toDataURL(
+        'image/jpeg',
+        0.7
+      );
+
+  };
+
+  reader.readAsDataURL(file);
+
+}
   createEvent() {
+
+      if (!this.newEvent.imageUrl) {
+
+    alert('Please upload an event image');
+
+    return;
+
+  }
+    
 
   const event = {
 
@@ -141,6 +215,8 @@ export class ManageEventsComponentComponent implements OnInit {
   this.newEvent.description,
 
     category: this.newEvent.category,
+      imageUrl: this.newEvent.imageUrl,
+
 
    venue: {
 
@@ -246,9 +322,10 @@ export class ManageEventsComponentComponent implements OnInit {
   this.isEditing = true;
 
   this.editingEventId = event.id;
+  
 
   this.newEvent = {
-
+imageUrl: event.imageUrl,
     title: event.title,
 
     description: event.description,
@@ -291,6 +368,7 @@ export class ManageEventsComponentComponent implements OnInit {
     totalSeats: this.newEvent.availableSeats,
 
     availableSeats: this.newEvent.availableSeats,
+      imageUrl: this.newEvent.imageUrl,
 
     venue: {
 
@@ -300,7 +378,8 @@ export class ManageEventsComponentComponent implements OnInit {
 
       address: this.newEvent.venueAddress,
 
-      city: this.newEvent.city
+      city: this.newEvent.city,
+     
 
     },
 
@@ -358,13 +437,20 @@ export class ManageEventsComponentComponent implements OnInit {
 
           price: 0,
 
-          availableSeats: 0
+          availableSeats: 0,
+
+          imageUrl: ''
 
         };
 
       }
 
     });
+
+}
+removeImage(): void {
+
+  this.newEvent.imageUrl = '';
 
 }
 }

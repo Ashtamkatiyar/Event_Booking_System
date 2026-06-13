@@ -1,78 +1,136 @@
 <div class="event-detail-container" *ngIf="event">
 
-  <div class="detail-card">
+  <div class="event-hero">
 
-    <div class="header">
+    <div class="hero-content">
 
-      <div>
+      <span class="category-badge">
+        {{ event.category }}
+      </span>
 
-        <h1>{{ event.title }}</h1>
+      <h1>
+        {{ event.title }}
+      </h1>
 
-        <span class="category-badge">
+      <p class="hero-subtitle">
+        {{ event.description }}
+      </p>
 
-          {{ event.category }}
+    </div>
 
-        </span>
+    <div class="hero-status">
 
-      </div>
-
-      <div class="status-badge">
-
+      <span class="status-badge">
         {{ event.status }}
-
-      </div>
-
-    </div>
-
-    <div class="description-section">
-
-      <h3>Description</h3>
-
-      <p>{{ event.description }}</p>
-
-    </div>
-
-    <div class="info-grid">
-
-      <div class="info-card">
-
-        <h4>Venue</h4>
-
-        <p>{{ event.venue.name }}</p>
-        <p>{{ event.venue.address }}</p>
-        <p>{{ event.venue.city }}</p>
-
-      </div>
-
-      <div class="info-card">
-
-        <h4>Schedule</h4>
-
-        <p>{{ event.schedule.startDate }}</p>
-        <p>{{ event.schedule.endDate }}</p>
-
-      </div>
-
-      <div class="info-card">
-
-        <h4>Seats</h4>
-
-        <p>Total: {{ event.totalSeats }}</p>
-        <p>Available: {{ event.availableSeats }}</p>
-
-      </div>
-
-    </div>
-
-    <div class="action-section">
+      </span>
 
       <a
-    class="book-btn"
-    [routerLink]="['/book-ticket', event.id]">
+        class="book-btn"
+        [routerLink]="['/book-ticket', event.id]">
 
-    Book Ticket
+        Book Ticket
 
-    </a>
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+
+      <span class="stat-label">
+        Available Seats
+      </span>
+
+      <h3>
+        {{ event.availableSeats }}
+      </h3>
+
+    </div>
+
+    <div class="stat-card">
+
+      <span class="stat-label">
+        Total Capacity
+      </span>
+
+      <h3>
+        {{ event.totalSeats }}
+      </h3>
+
+    </div>
+
+    <div class="stat-card">
+
+      <span class="stat-label">
+        City
+      </span>
+
+      <h3>
+        {{ event.venue.city }}
+      </h3>
+
+    </div>
+
+  </div>
+
+  <div class="content-grid">
+
+    <div class="section-card">
+
+      <h3>Venue Information</h3>
+
+      <div class="detail-item">
+
+        <span>🏢</span>
+
+        <div>
+          <strong>{{ event.venue.name }}</strong>
+          <p>{{ event.venue.address }}</p>
+        </div>
+
+      </div>
+
+      <div class="detail-item">
+
+        <span>📍</span>
+
+        <div>
+          <p>{{ event.venue.city }}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="section-card">
+
+      <h3>Event Schedule</h3>
+
+      <div class="detail-item">
+
+        <span>📅</span>
+
+        <div>
+          <strong>Start Date</strong>
+          <p>{{ event.schedule.startDate }}</p>
+        </div>
+
+      </div>
+
+      <div class="detail-item">
+
+        <span>⏳</span>
+
+        <div>
+          <strong>End Date</strong>
+          <p>{{ event.schedule.endDate }}</p>
+        </div>
+
+      </div>
+
     </div>
 
   </div>

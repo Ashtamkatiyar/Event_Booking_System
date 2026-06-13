@@ -32,6 +32,39 @@
   [(ngModel)]="newEvent[field.key]">
 </div>
 
+<div class="form-group">
+
+  <label>
+    Event Image
+  </label>
+
+  <input
+    type="file"
+    accept="image/*"
+    (change)="onImageSelected($event)">
+
+</div>
+
+@if(newEvent.imageUrl){
+
+<div class="preview-container">
+
+  <img
+    [src]="newEvent.imageUrl"
+    alt="Preview">
+
+  <button
+    type="button"
+    class="remove-image-btn"
+    (click)="removeImage()">
+
+    Remove Image
+
+  </button>
+
+</div>
+
+}
     @if(!isEditing) {
 
       <button

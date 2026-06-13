@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { Event } from '../../../models/event.model';
 
@@ -17,7 +18,8 @@ import { EventService } from '../../../services/event.service';
   imports: [
     CommonModule,
     EventCardComponentComponent,
-    SearchFilterComponentComponent
+    SearchFilterComponentComponent,
+    FormsModule       
   ],
   templateUrl: './event-list-component.component.html',
   styleUrl: './event-list-component.component.css'
@@ -39,6 +41,8 @@ export class EventListComponentComponent implements OnInit  {
     });
 
 }
+
+userName: string = '';
 
   events: Event[] = [];
 

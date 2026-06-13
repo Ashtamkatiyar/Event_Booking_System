@@ -1,9 +1,11 @@
 import {
   Component,
   EventEmitter,
+  Input,
   Output,
   signal
 } from '@angular/core';
+
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,9 +17,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class SearchFilterComponentComponent {
 
+  @Input()
+  totalEvents = 0;
+
   searchText = signal('');
 
-selectedCategory = signal('');
+  selectedCategory = signal('');
 
   @Output()
   filterChanged = new EventEmitter<{
@@ -25,17 +30,41 @@ selectedCategory = signal('');
     category: string;
   }>();
 
-  applyFilter() {
+  private emitFilter() {
 
-  this.filterChanged.emit({
+    this.filterChanged.emit({
+      searchText: this.searchText(),
+      category: this.selectedCategory()
+    });
 
-    searchText:
-      this.searchText(),
+  }
 
-    category:
-      this.selectedCategory()
+  onSearchChange(value: string) {
 
-  });
+    this.searchText.set(value);
 
-}
+    this.emitFilter();
+  }
+
+  onCategoryChange(value: string) {
+
+    this.selectedCategory.set(value);
+
+    this.emitFilter();
+  }
+
+  clearFilters() {
+
+    this.searchText.set('');
+    this.selectedCategory.set('');
+
+    this.emitFilter();
+  }
+
+  selectQuickCategory(category: string) {
+
+    this.selectedCategory.set(category);
+
+    this.emitFilter();
+  }
 }

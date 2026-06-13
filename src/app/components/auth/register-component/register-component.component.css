@@ -1,184 +1,307 @@
-.register-container {
+/* =========================
+   REGISTER PAGE
+========================= */
 
-  min-height: calc(100vh - 80px);
+.register-page{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
 
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  padding: 24px;
-
+  background:
+    linear-gradient(
+      135deg,
+      #F5FDF8,
+      #ECFDF3
+    );
 }
 
-.card {
+/* =========================
+   CONTAINER
+========================= */
 
-  width: 100%;
+.register-container{
+  width:100%;
+  max-width:420px;
+}
 
-  max-width: 500px;
+/* =========================
+   CARD
+========================= */
 
-  background: #FFFFFF;
+.card{
+  background:#FFFFFF;
 
-  border: 1px solid #E5E7EB;
+  border:1px solid #DCFCE7;
 
-  border-radius: 16px;
+  border-radius:18px;
 
-  padding: 40px;
+  padding:28px;
 
   box-shadow:
-    0 10px 30px rgba(0,0,0,.08);
-
+    0 8px 25px rgba(22,163,74,.08);
 }
 
-.brand {
+/* =========================
+   BRAND
+========================= */
 
-  text-align: center;
-
-  margin-bottom: 20px;
-
+.brand{
+  text-align:center;
+  margin-bottom:18px;
 }
 
-.brand h1 {
+.brand-icon{
+  width:50px;
+  height:50px;
 
-  color: #111827;
+  margin:0 auto 12px;
 
-  font-size: 32px;
+  border-radius:14px;
 
-  font-weight: 700;
+  background:
+    linear-gradient(
+      135deg,
+      #16A34A,
+      #22C55E
+    );
 
-  margin-bottom: 6px;
-
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-.brand p {
+.brand-icon svg{
+  width:24px;
+  height:24px;
 
-  color: #6B7280;
-
-  font-size: 14px;
-
+  stroke:#FFFFFF;
+  fill:none;
+  stroke-width:2;
 }
 
-h2 {
-
-  text-align: center;
-
-  margin-bottom: 28px;
-
-  color: #111827;
-
-  font-size: 24px;
-
-  font-weight: 600;
-
+.brand h1{
+  font-size:24px;
+  font-weight:700;
+  color:#166534;
+  margin-bottom:4px;
 }
 
-.form-group {
-
-  margin-bottom: 20px;
-
+.brand p{
+  font-size:13px;
+  color:#6B7280;
 }
 
-label {
+/* =========================
+   SECURE BADGE
+========================= */
 
-  display: block;
+.secure-badge{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
 
-  margin-bottom: 8px;
+  width:fit-content;
 
-  color: #374151;
+  margin:0 auto 18px;
 
-  font-weight: 500;
+  padding:6px 12px;
 
+  background:#F0FDF4;
+
+  border:1px solid #BBF7D0;
+
+  border-radius:30px;
+
+  color:#166534;
+
+  font-size:12px;
+  font-weight:500;
 }
 
-.form-control {
+.secure-badge svg{
+  width:12px;
+  height:12px;
 
-  width: 100%;
-
-  padding: 12px 14px;
-
-  border: 1px solid #D1D5DB;
-
-  border-radius: 8px;
-
-  transition: .3s;
-
+  stroke:#16A34A;
+  fill:none;
 }
 
-.form-control:focus {
+/* =========================
+   DIVIDER
+========================= */
 
-  border-color: #D4AF37;
-
-  outline: none;
-
+.section-divider{
+  border:none;
+  border-top:1px solid #E5E7EB;
+  margin-bottom:20px;
 }
 
-button {
+/* =========================
+   HEADING
+========================= */
 
-  width: 100%;
+h2{
+  text-align:center;
 
-  padding: 14px;
+  font-size:22px;
+  font-weight:700;
 
-  background: #111827;
+  color:#166534;
 
-  color: #FFFFFF;
-
-  border: none;
-
-  border-radius: 8px;
-
-  font-size: 15px;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: .3s;
-
+  margin-bottom:22px;
 }
 
-button:hover {
+/* =========================
+   FORM
+========================= */
 
-  background: #1F2937;
-
+.form-group{
+  margin-bottom:14px;
 }
 
-.error {
+label{
+  display:block;
 
-  display: block;
+  margin-bottom:6px;
 
-  margin-top: 6px;
+  font-size:13px;
+  font-weight:600;
 
-  color: #DC2626;
-
-  font-size: 12px;
-
+  color:#374151;
 }
 
-.login-link {
+.form-control{
+  width:100%;
 
-  margin-top: 20px;
+  padding:12px 14px;
 
-  text-align: center;
+  border-radius:10px;
 
-  color: #6B7280;
+  border:1px solid #D1FAE5;
 
-  font-size: 14px;
+  background:#F9FFFB;
 
+  font-size:14px;
+
+  transition:.3s;
 }
 
-.login-link a {
-
-  color: #D4AF37;
-
-  text-decoration: none;
-
-  font-weight: 600;
-
+.form-control::placeholder{
+  color:#9CA3AF;
 }
 
-.login-link a:hover {
+.form-control:focus{
+  outline:none;
 
-  text-decoration: underline;
+  border-color:#22C55E;
+
+  background:#FFFFFF;
+
+  box-shadow:
+    0 0 0 4px rgba(34,197,94,.12);
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.error{
+  display:block;
+
+  margin-top:5px;
+
+  font-size:12px;
+
+  color:#DC2626;
+}
+
+/* =========================
+   REGISTER BUTTON
+========================= */
+
+.btn-register{
+  width:100%;
+
+  padding:12px;
+
+  margin-top:8px;
+
+  border:none;
+  border-radius:10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #16A34A,
+      #22C55E
+    );
+
+  color:#FFFFFF;
+
+  font-size:15px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.btn-register:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(34,197,94,.25);
+}
+
+/* =========================
+   LOGIN LINK
+========================= */
+
+.login-link{
+  margin-top:18px;
+
+  text-align:center;
+
+  color:#6B7280;
+
+  font-size:13px;
+}
+
+.login-link a{
+  color:#16A34A;
+
+  font-weight:700;
+
+  text-decoration:none;
+}
+
+.login-link a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+  .register-page{
+    padding:15px;
+  }
+
+  .card{
+    padding:22px;
+  }
+
+  .brand h1{
+    font-size:22px;
+  }
+
+  h2{
+    font-size:20px;
+  }
 
 }
