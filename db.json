@@ -189,6 +189,8 @@
           "remainingTickets": 99
         }
       ],
+      "totalSeats": 100,
+      "availableSeats": 99,
       "totalSeats": 99,
       "availableSeats": 100,
       "status": "Upcoming",
@@ -317,6 +319,27 @@
       "tickets": []
     },
     {
+      "id": "N8r_FAGWi54",
+      "userId": 4,
+      "eventId": "wykG_oAkfe8",
+      "bookingDate": "2026-06-11T10:01:39.991Z",
+      "quantity": 1,
+      "totalAmount": 200,
+      "status": "Confirmed",
+      "tickets": []
+    },
+    {
+      "id": "ZPgyPE7sW7g",
+      "userId": 4,
+      "eventId": "1",
+      "bookingDate": "2026-06-11T10:02:13.654Z",
+      "quantity": 1,
+      "totalAmount": 999,
+      "status": "Cancelled",
+      "tickets": [],
+      "eventName": "Angular Developer Conference"
+    },
+    {
       "id": "eMXhOj1-VEs",
       "userId": 4,
       "eventId": "2",
@@ -422,6 +445,24 @@
       "message": "New event created: IPL Final",
       "type": "Event",
       "createdAt": "2026-06-11T09:25:37.111Z"
+    },
+    {
+      "id": "H3QkRysS5m4",
+      "message": "New booking for Python-AI Masterclass",
+      "type": "Booking",
+      "createdAt": "2026-06-11T10:01:40.075Z"
+    },
+    {
+      "id": "TYe4tNpwA2g",
+      "message": "New booking for Angular Developer Conference",
+      "type": "Booking",
+      "createdAt": "2026-06-11T10:02:13.679Z"
+    },
+    {
+      "id": "6HvHJORiQvc",
+      "message": "Booking cancelled for Angular Developer Conference",
+      "type": "Cancellation",
+      "createdAt": "2026-06-11T10:02:23.354Z"
     },
     {
       "id": "TUlM8DXIEFA",

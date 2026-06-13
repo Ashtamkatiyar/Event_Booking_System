@@ -10,7 +10,15 @@ from '../event-card-component/event-card-component.component';
 import { SearchFilterComponentComponent }
 from '../search-filter-component/search-filter-component.component';
 import { OnInit } from '@angular/core';
-import { EventService } from '../../../services/event.service';
+import { Store } from '@ngrx/store';
+
+import {
+  loadEvents
+} from '../../../store/events/event.actions';
+
+import {
+  selectAllEvents
+} from '../../../store/events/event.selectors';
 
 @Component({
   selector: 'app-event-list-component',
@@ -27,16 +35,24 @@ import { EventService } from '../../../services/event.service';
 export class EventListComponentComponent implements OnInit  {
 
   constructor(
-  private eventService: EventService
+  private store: Store
 ){}
   ngOnInit(): void {
 
-  this.eventService
-    .getEvents()
+  this.store.dispatch(
+    loadEvents()
+  );
+
+  this.store
+    .select(
+      selectAllEvents
+    )
     .subscribe(data => {
 
       this.events = data;
-      this.filteredEvents = [...data];
+
+      this.filteredEvents =
+        [...data];
 
     });
 
