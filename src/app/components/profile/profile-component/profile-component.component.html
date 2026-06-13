@@ -1,106 +1,117 @@
 <div class="profile-container">
 
+  <div class="profile-banner">
+    <div class="avatar-section">
+
+      <div class="avatar">
+        {{ profile.fullName.charAt(0) }}
+      </div>
+
+      <div class="user-details">
+        <h2>{{ profile.fullName }}</h2>
+        <p>{{ profile.email }}</p>
+      </div>
+
+    </div>
+
+    <div class="profile-stats">
+
+      <div class="stat-card">
+        <h3>12</h3>
+        <span>Events Joined</span>
+      </div>
+
+      <div class="stat-card">
+        <h3>5</h3>
+        <span>Bookings</span>
+      </div>
+
+    </div>
+  </div>
+
   <div class="profile-card">
-    <div class="profile-header">
 
-  <div class="avatar">
+    <h3 class="section-title">
+      Personal Information
+    </h3>
 
-    {{ profile.fullName.charAt(0) }}
+    <div class="form-grid">
 
-  </div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input
+          type="text"
+          [(ngModel)]="profile.fullName">
+      </div>
 
-  <h2>My Profile</h2>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input
+          type="email"
+          [(ngModel)]="profile.email">
+      </div>
 
-</div>
-
-    <div class="form-group">
-
-      <label>
-
-        Full Name
-
-      </label>
-
-      <input
-        type="text"
-        [(ngModel)]="profile.fullName">
-
-    </div>
-
-    <div class="form-group">
-
-      <label>
-
-        Email
-
-      </label>
-
-      <input
-        type="email"
-        [(ngModel)]="profile.email">
+      <div class="form-group full-width">
+        <label>Phone Number</label>
+        <input
+          type="text"
+          [(ngModel)]="profile.phone">
+      </div>
 
     </div>
 
-    <div class="form-group">
+    <h3 class="section-title">
+      Preferences
+    </h3>
 
-      <label>
+    <div class="setting-card">
 
-        Phone Number
+      <div>
+        <h4>Receive Notifications</h4>
+        <p>
+          Get updates about bookings and events
+        </p>
+      </div>
 
+      <label class="switch">
+        <input
+          type="checkbox"
+          [(ngModel)]="profile.notifications">
+        <span class="slider"></span>
       </label>
-
-      <input
-        type="text"
-        [(ngModel)]="profile.phone">
 
     </div>
 
-   <div class="checkbox-card">
+    <div class="setting-card">
 
-  <input
-    type="checkbox"
-    [(ngModel)]="profile.notifications">
+      <div>
+        <h4>SMS Alerts</h4>
+        <p>
+          Receive important updates via SMS
+        </p>
+      </div>
 
-  <div class="checkbox-content">
+      <label class="switch">
+        <input
+          type="checkbox"
+          [(ngModel)]="profile.smsAlerts">
+        <span class="slider"></span>
+      </label>
 
-    <h4>Receive Notifications</h4>
-
-    <p>
-      Get updates about bookings and events
-    </p>
-
-  </div>
-
-</div>
-
-<div class="checkbox-card">
-
-  <input
-    type="checkbox"
-    [(ngModel)]="profile.smsAlerts">
-
-  <div class="checkbox-content">
-
-    <h4>Receive SMS Alerts</h4>
-
-    <p>
-      Receive important updates via SMS
-    </p>
-
-  </div>
-
-</div>
+    </div>
 
     <div class="button-container">
 
-  <button
-    class="save-btn"
-    (click)="saveProfile()">
+      <button
+        class="save-btn"
+        (click)="saveProfile()">
 
-    Save Profile
+        Save Changes
 
-  </button>
+      </button>
 
-</div>
+    </div>
+
+  </div>
 
 </div>

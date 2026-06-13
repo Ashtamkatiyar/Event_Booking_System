@@ -28,16 +28,22 @@ export class NavbarComponentComponent {
     return this.currentUser?.role === 'Admin';
   }
 
-  logout() {
+ logout() {
 
-    localStorage.removeItem(
-      'currentUser'
-    );
+  const confirmed = confirm(
+    'Are you sure you want to logout?'
+  );
 
-    this.router.navigate([
-      '/login'
-    ]);
-
+  if (!confirmed) {
+    return;
   }
+
+  // Logout logic here
+
+  localStorage.clear();
+
+  this.router.navigate(['/login']);
+
+}
 
 }

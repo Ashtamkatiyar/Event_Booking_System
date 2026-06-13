@@ -54,4 +54,5 @@ export interface Event {
   availableSeats: number;
   status: EventStatus;
   createdAt: string;
+  imageUrl?: string;
 }

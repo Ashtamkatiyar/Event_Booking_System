@@ -1,7 +1,21 @@
-<div
-  class="notification"
-  [ngClass]="type">
+<div class="notification" [ngClass]="type">
 
-  {{ message }}
+  <span class="notification-icon">
+    @if(type === 'success') {
+      ✓
+    }
+
+    @if(type === 'error') {
+      ✕
+    }
+
+    @if(type === 'warning') {
+      ⚠
+    }
+  </span>
+
+  <span class="notification-message">
+    {{ message }}
+  </span>
 
 </div>

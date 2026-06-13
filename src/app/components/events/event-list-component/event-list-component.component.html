@@ -1,10 +1,80 @@
-<div class="page-header">
+<div class="hero-section">
 
-  <h2>Available Events</h2>
+  <div class="hero-left">
 
-  <p>
-    Discover and book upcoming events.
-  </p>
+    <span class="hero-badge">
+      🎉 Discover Amazing Events
+    </span>
+
+    <h1>
+      Welcome,
+      <span class="user-name">
+        {{ userName || 'Guest' }}
+      </span>
+    </h1>
+
+    <h2>
+      Find Events That Match Your Passion
+    </h2>
+
+    <p>
+      Explore concerts, workshops, conferences, sports events and unforgettable experiences happening around you.
+    </p>
+
+    <div class="name-input-wrapper">
+
+      <input
+        type="text"
+        placeholder="Enter your name..."
+        [(ngModel)]="userName">
+
+    </div>
+
+    <div class="hero-actions">
+
+      <button class="primary-btn">
+        Explore Events
+      </button>
+
+      <button class="secondary-btn">
+        Learn More
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="hero-right">
+
+    <div class="stat-card">
+
+      <h3>500+</h3>
+      <span>Events</span>
+
+    </div>
+
+    <div class="stat-card">
+
+      <h3>50K+</h3>
+      <span>Bookings</span>
+
+    </div>
+
+    <div class="stat-card">
+
+      <h3>100+</h3>
+      <span>Organizers</span>
+
+    </div>
+
+    <div class="stat-card">
+
+      <h3>24/7</h3>
+      <span>Support</span>
+
+    </div>
+
+  </div>
 
 </div>
 
@@ -20,3 +90,5 @@
   </app-event-card-component>
 
 </div>
+
+

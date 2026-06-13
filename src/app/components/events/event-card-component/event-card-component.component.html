@@ -1,59 +1,64 @@
 <div class="event-card">
 
-  <div class="card-header">
+ <div class="event-image" *ngIf="event.imageUrl">
+
+  <img [src]="event.imageUrl" [alt]="event.title">
+
+  <span class="image-badge">
+    {{ event.category }}
+  </span>
+
+</div>
+
+  <div class="card-body">
+
+    <div class="card-header">
+      <span class="category">{{ event.category }}</span>
+      <span class="status-badge">{{ event.status }}</span>
+    </div>
 
     <h3>{{ event.title }}</h3>
 
-    <span class="status-badge">
-      {{ event.status }}
-    </span>
+    <div class="info-section">
 
-  </div>
+      <div class="info-item">
+        <span>📍</span>
+        <p>{{ event.venue.city }}</p>
+      </div>
 
-  <p class="category">
-    {{ event.category }}
-  </p>
+      <div class="info-item">
+        <span>🏢</span>
+        <p>{{ event.venue.name }}</p>
+      </div>
 
-  <div class="info">
+      <div class="info-item">
+        <span>📅</span>
+        <p>{{ event.schedule.startDate }}</p>
+      </div>
 
-    <p>📍 {{ event.venue.city }}</p>
+    </div>
 
-    <p>🏢 {{ event.venue.name }}</p>
+    <div class="seat-row">
+      <span class="seat-label">Available Seats</span>
+      <span
+        appLowSeatWarning
+        [seats]="event.availableSeats"
+        class="seat-count">
+        {{ event.availableSeats }}
+      </span>
+    </div>
 
-    <p>📅 {{ event.schedule.startDate }}</p>
+    <div class="actions">
 
-  </div>
+      <button class="details-btn" (click)="viewDetails(event.id)">
+        View Details
+      </button>
 
-  <div class="seat-section">
+      <button class="book-btn" (click)="bookTicket(event.id)">
+        Book Now
+      </button>
 
-    <p
-  appLowSeatWarning
-  [seats]="event.availableSeats">
-
-  Available Seats:
-  {{ event.availableSeats }}
-
-</p>
-
-  </div>
-
-  <div class="actions">
-
-    <button
-      class="details-btn"
-      (click)="viewDetails(event.id)">
-
-      View Details
-
-    </button>
-
-    <button
-  class="book-btn"
-  (click)="bookTicket(event.id)">
-
-  Book Now
-
-</button>
+    </div>
 
   </div>
 

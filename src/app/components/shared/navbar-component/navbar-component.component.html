@@ -1,26 +1,52 @@
 <nav class="navbar">
 
-  <div class="logo">
+  <div class="logo-section">
 
-    <h2>EventHub</h2>
+   
+
+    <div class="logo">
+       
+  <div class="footer-brand">
+
+   
+
+    <div>
+
+      <div class="footer-brand-name">
+
+        Event<span>Hub</span>
+
+      </div>
+
+      <div class="footer-subtitle">
+
+        Book • Explore • Enjoy
+
+      </div>
+
+    </div>
+
+  </div>
+     
+    </div>
 
   </div>
 
   <ul class="nav-links">
 
     <li>
-  <a routerLink="/profile">
-    Profile
-  </a>
-</li>
-
-    <li>
       <a
         routerLink="/events"
         routerLinkActive="active-link">
-
         Events
+      </a>
+    </li>
 
+    <li>
+      <a
+        routerLink="/profile"
+        routerLinkActive="active-link">
+        Profile
       </a>
     </li>
 
@@ -28,9 +54,7 @@
       <a
         routerLink="/booking-history"
         routerLinkActive="active-link">
-
         Bookings
-
       </a>
     </li>
 
@@ -40,19 +64,7 @@
         <a
           routerLink="/admin-dashboard"
           routerLinkActive="active-link">
-
           Dashboard
-
-        </a>
-      </li>
-
-      <li>
-        <a
-          routerLink="/manage-events"
-          routerLinkActive="active-link">
-
-          Manage Events
-
         </a>
       </li>
 
@@ -60,34 +72,31 @@
         <a
           routerLink="/manage-bookings"
           routerLinkActive="active-link">
-
           Manage Bookings
-
         </a>
       </li>
 
       <li>
-
-        <span class="role-badge">
-
-          Admin
-
-        </span>
-
+        <a
+          routerLink="/manage-events"
+          routerLinkActive="active-link">
+          Manage Events
+        </a>
       </li>
 
+      <li>
+        <span class="role-badge">
+          Admin
+        </span>
+      </li>
     }
 
     <li>
-
       <button
         class="logout-btn"
         (click)="logout()">
-
         Logout
-
       </button>
-
     </li>
 
   </ul>

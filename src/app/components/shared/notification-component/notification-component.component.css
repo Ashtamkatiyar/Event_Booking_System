@@ -1,18 +1,70 @@
-.notification{
-    padding:15px;
-    border-radius:5px;
-    margin:10px 0;
-    color:white;
+.notification {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 18px;
+  margin: 12px 0;
+
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  border-left: 4px solid transparent;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+
+  animation: slideIn 0.3s ease;
+}
+
+/* Icons */
+
+.notification-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Success */
+
+.success {
+  background: #F0FDF4;
+  color: #166534;
+  border-left-color: #22C55E;
+}
+
+/* Error */
+
+.error {
+  background: #FEF2F2;
+  color: #991B1B;
+  border-left-color: #EF4444;
+}
+
+/* Warning */
+
+.warning {
+  background: #FFFBEB;
+  color: #92400E;
+  border-left-color: #F59E0B;
+}
+
+/* Message */
+
+.notification-message {
+  flex: 1;
+}
+
+/* Animation */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
   }
-  
-  .success{
-    background:green;
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .error{
-    background:red;
-  }
-  
-  .warning{
-    background:orange;
-  }
+}
