@@ -1,8 +1,10 @@
-import { BookingStatusPipeTsPipe } from './booking-status.pipe.ts.pipe';
+import { BookingStatusPipe} from './booking-status.pipe';
 
 describe('BookingStatusPipeTsPipe', () => {
   it('create an instance', () => {
-    const pipe = new BookingStatusPipeTsPipe();
+    const pipe = new BookingStatusPipe();
     expect(pipe).toBeTruthy();
   });
+
+  
 });

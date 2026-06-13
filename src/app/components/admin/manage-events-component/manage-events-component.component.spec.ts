@@ -1,16 +1,19 @@
+/// <reference types="jasmine" />
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
 
 import { ManageEventsComponentComponent } from './manage-events-component.component';
 
-describe('ManageEventsComponentComponent', () => {
+describe('ManageEventsComponent', () => {
   let component: ManageEventsComponentComponent;
   let fixture: ComponentFixture<ManageEventsComponentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ManageEventsComponentComponent]
-    })
-    .compileComponents();
+      imports: [ManageEventsComponentComponent],
+      providers: [provideHttpClient()]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ManageEventsComponentComponent);
     component = fixture.componentInstance;
