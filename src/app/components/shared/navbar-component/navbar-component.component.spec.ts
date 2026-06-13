@@ -1,4 +1,8 @@
+/// <reference types="jasmine" />
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 import { NavbarComponentComponent } from './navbar-component.component';
 
@@ -8,9 +12,21 @@ describe('NavbarComponentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavbarComponentComponent]
-    })
-    .compileComponents();
+      imports: [NavbarComponentComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({}),
+            snapshot: {
+              paramMap: {
+                get: () => null
+              }
+            }
+          }
+        }
+      ]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NavbarComponentComponent);
     component = fixture.componentInstance;

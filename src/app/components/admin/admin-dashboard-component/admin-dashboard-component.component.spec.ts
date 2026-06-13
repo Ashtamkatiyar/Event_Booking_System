@@ -1,18 +1,21 @@
+/// <reference types="jasmine" />
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
 
-import { AdminDashboardComponentComponent } from './admin-dashboard-component.component';
+import { AdminDashboardComponent } from './admin-dashboard-component.component';
 
-describe('AdminDashboardComponentComponent', () => {
-  let component: AdminDashboardComponentComponent;
-  let fixture: ComponentFixture<AdminDashboardComponentComponent>;
+describe('AdminDashboardComponent', () => {
+  let component: AdminDashboardComponent;
+  let fixture: ComponentFixture<AdminDashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdminDashboardComponentComponent]
-    })
-    .compileComponents();
+      imports: [AdminDashboardComponent],
+      providers: [provideHttpClient()]
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(AdminDashboardComponentComponent);
+    fixture = TestBed.createComponent(AdminDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

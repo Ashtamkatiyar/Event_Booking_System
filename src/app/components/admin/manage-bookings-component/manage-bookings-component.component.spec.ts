@@ -1,18 +1,21 @@
+/// <reference types="jasmine" />
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
 
-import { ManageBookingsComponentComponent } from './manage-bookings-component.component';
+import { ManageBookingsComponent } from './manage-bookings-component.component';
 
-describe('ManageBookingsComponentComponent', () => {
-  let component: ManageBookingsComponentComponent;
-  let fixture: ComponentFixture<ManageBookingsComponentComponent>;
+describe('ManageBookingsComponent', () => {
+  let component: ManageBookingsComponent;
+  let fixture: ComponentFixture<ManageBookingsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ManageBookingsComponentComponent]
-    })
-    .compileComponents();
+      imports: [ManageBookingsComponent],
+      providers: [provideHttpClient()]
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(ManageBookingsComponentComponent);
+    fixture = TestBed.createComponent(ManageBookingsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

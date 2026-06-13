@@ -1,18 +1,18 @@
+/// <reference types="jasmine" />
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TicketSummaryComponent } from './ticket-summary-component.component';
 
-import { TicketSummaryComponentComponent } from './ticket-summary-component.component';
-
-describe('TicketSummaryComponentComponent', () => {
-  let component: TicketSummaryComponentComponent;
-  let fixture: ComponentFixture<TicketSummaryComponentComponent>;
+describe('TicketSummaryComponent', () => {
+  let component: TicketSummaryComponent;
+  let fixture: ComponentFixture<TicketSummaryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TicketSummaryComponentComponent]
-    })
-    .compileComponents();
+      imports: [TicketSummaryComponent]
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(TicketSummaryComponentComponent);
+    fixture = TestBed.createComponent(TicketSummaryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
